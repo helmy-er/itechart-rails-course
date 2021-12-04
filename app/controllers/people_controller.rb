@@ -21,10 +21,9 @@ class PeopleController < ApplicationController
 
   # POST /people or /people.json
   def create
-    @person = Person.new(person_params)
-
+    @person = Person.create(name:params[:person].require(:name),user_id:current_user.id)
     respond_to do |format|
-      if @person.save
+      if @person.save()
         format.html { redirect_to @person, notice: "Person was successfully created." }
         format.json { render :show, status: :created, location: @person }
       else
@@ -64,6 +63,6 @@ class PeopleController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def person_params
-      params.fetch(:person, {})
+      params.require(:person).permit(:name)
     end
 end
