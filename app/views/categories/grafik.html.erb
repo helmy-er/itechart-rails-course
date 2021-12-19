@@ -1,0 +1,124 @@
+<html>
+<head>
+</head>
+<body>
+
+
+<%= include_gon %>
+<div id ='insert'></div>
+<canvas id="myChart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="date_block">
+  <center>
+    от  <input type="date" value="" id="start">
+    до  <input type="date" id="end">
+    <input type="button" value="подтвердить" onclick="newdate()">
+  </center>
+</div>
+<%=link_to 'Back' ,people_path ,class:"one"%>
+<h5>Имена записей </h5>
+<div><ul>
+  <%for i in @names %>
+    <li><%= i %></li>
+    <% end %></ul>
+</div>
+<h5>Имена категорий расходов </h5>
+ <div><ul>
+  <%for i in @names_expenses %>
+    <li><%= i %></li>
+  <% end %>
+</ul>
+</div>
+<h5>Имена категорий доходов </h5>
+<div>
+  <ul>
+  <%for i in @names_of_income %>
+      <li><%= i %></li>
+  <% end %>
+  </ul>
+</div>
+<div id="chart_div" style="width: 100%; height: 500px;"></div>
+
+<script src="moment.min.js"></script>
+<script src="twix.min.js"></script>
+<script>
+    data=gon.data
+    data1=gon.space
+    var now = new Date();
+    dates=labels(1,now.getDate(),now.getMonth()+1)
+    drow()
+    function drow() {
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: dates,
+                datasets: [{
+                    label: 'доходы',
+                    data: setdata(dates),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+
+                    ],
+                    borderWidth: 1
+                },{
+                    label: 'траты',
+                    data: setdata1(dates),
+                    backgroundColor: [
+
+                        'rgba(54, 162, 235, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+        });
+    }
+    function labels(start_date,end_date,month){
+        standart_labels=[]
+        for (let i = start_date; i <= end_date; i++)
+        {
+            standart_labels.push(month+'-'+i)
+        }
+        return standart_labels
+    }
+    function setdata(date) {
+        new_data=[]
+        for (let i in date) {
+            new_data.push(data[date[i]])
+        }
+        return new_data
+    }
+    function setdata1(date) {
+        new_data=[]
+        for (let i in date) {
+            new_data.push(data1[date[i]])
+        }
+        return new_data
+    }
+    function newdate(){
+        start_date=document.getElementById('start')
+        end_date=document.getElementById('end')
+        first_day=Number(((start_date.value).split('-'))[2])
+        last_day=Number(((end_date.value).split('-'))[2])
+        montn=Number(((start_date.value).split('-'))[1])
+        dates=labels(first_day,last_day,montn)
+        updated_data=setdata(dates)
+        document.getElementById('myChart').remove()
+        let div =  document. createElement('canvas')
+        div.id='myChart'
+        place=document.getElementById('insert')
+        place.append(div);
+        drow()
+    }
+console.log(gon.space)
+console.log(gon.data)
+</script>
+</body>
+</html>
+

@@ -1,14 +1,14 @@
-class ExpensesController < ApplicationController
-  before_action :set_expense, only: %i[ show edit update destroy ]
+# frozen_string_literal: true
 
+class ExpensesController < ApplicationController
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.all
+    target = Category.find(params.require(:people_id))
+    @expenses = target.expenses.all
   end
 
   # GET /expenses/1 or /expenses/1.json
-  def show
-  end
+  def show; end
 
   # GET /expenses/new
   def new
@@ -16,54 +16,54 @@ class ExpensesController < ApplicationController
   end
 
   # GET /expenses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /expenses or /expenses.json
   def create
-    @expense = Expense.new(expense_params)
-
-    respond_to do |format|
-      if @expense.save
-        format.html { redirect_to @expense, notice: "Expense was successfully created." }
-        format.json { render :show, status: :created, location: @expense }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
-      end
+    name = params[:expense].permit(:name)[:name]
+    text = params[:expense].permit(:text)[:text]
+    sum = params[:expense].permit(:summa)[:summa]
+    time = params[:expense].permit(:date)[:date]
+    if name != '' && sum != '' && time != ''
+      status = params[:expense].require(:status) == '1'
+      @expense = Expense.new(name: name, text: text,
+                             time: time, category_id: params.require(:format), status: status, summ: sum)
+      redirect_to expenses_path(params.require(:format)) if @expense.save(validate: false)
+    else
+      redirect_to new_expense_path(params.require(:format))
     end
   end
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update
-    respond_to do |format|
-      if @expense.update(expense_params)
-        format.html { redirect_to @expense, notice: "Expense was successfully updated." }
-        format.json { render :show, status: :ok, location: @expense }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
+    name = params[:expense].permit(:name)[:name]
+    text = params[:expense].permit(:text)[:text]
+    status = params[:expense].permit(:status)[:status]
+    summ = params[:expense].permit(:summa)[:summa]
+    time = params[:expense].permit(:date)[:date]
+    if name != '' && text != '' && summ != '' && time != ''
+      status = status == '1'
+      @expense = Expense.find(params.require(:format))
+      @peoples_id = Expense.find(params.require(:format)).category_id
+      if @expense.update_attribute('name',
+                                   name) && @expense.update_attribute('text',
+                                                                      text) && @expense.update_attribute('status',
+                                                                                                         status) && @expense.update_attribute(
+                                                                                                           'summ', summ
+                                                                                                         ) && @expense.update_attribute(
+                                                                                                           'time', time
+                                                                                                         )
+        redirect_to expenses_path(@peoples_id)
       end
+    else
+      redirect_to edit_expense_path(params.require(:format))
     end
   end
 
   # DELETE /expenses/1 or /expenses/1.json
   def destroy
-    @expense.destroy
-    respond_to do |format|
-      format.html { redirect_to expenses_url, notice: "Expense was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    @expense = Expense.find(params.require(:format))
+    @peoples_id = Expense.find(params.require(:format)).category_id
+    redirect_to expenses_path(@peoples_id) if @expense.destroy
   end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_expense
-      @expense = Expense.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def expense_params
-      params.fetch(:expense, {})
-    end
 end

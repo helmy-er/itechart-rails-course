@@ -1,25 +1,61 @@
+<html>
+<head>
+</head>
+<body>
 <p id="notice"><%= notice %></p>
-
 <h1>Expenses</h1>
-
-<table>
+<table class="table">
   <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th >имя</th>
+    <th>дата</th>
+    <th colspan="4">действия</th>
+  </tr>
   </thead>
-
+  <% person_id=params.require(:people_id) %>
   <tbody>
-    <% @expenses.each do |expense| %>
+  <% @expenses.each do |expense| %>
+    <% if !expense.status %>
       <tr>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+        <td><%= expense.name %></td>
+        <td><%= expense.time %></td>
+        <td><%= link_to 'show', expense_path(expense) %></td>
         <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <%=link_to "edit",edit_expense_path(expense.id) %></td>
       </tr>
-    <% end %>
+    <%end %>
+  <% end %>
   </tbody>
 </table>
-
+<div>
+  <h1>Важные</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th >имя</th>
+      <th>дата</th>
+      <th colspan="4">действия</th>
+    </tr>
+    </thead>
+    <% person_id=params.require(:people_id) %>
+    <tbody>
+    <% @expenses.each do |expense| %>
+      <% if expense.status %>
+        <tr>
+          <td><%= expense.name %></td>
+          <td><%= expense.time %></td>
+          <td><%= link_to 'show', expense_path(expense) %></td>
+          <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td> <%=link_to "edit",edit_expense_path(expense.id) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
+<%= link_to 'New Expense', new_expense_path(person_id),class:"one" %>
+<td><%= link_to 'Back', people_path,class:"one" %></td>
 
-<%= link_to 'New Expense', new_expense_path %>
+</body>
+</html>

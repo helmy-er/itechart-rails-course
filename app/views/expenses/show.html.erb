@@ -1,4 +1,34 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_expense_path(@expense) %> |
-<%= link_to 'Back', expenses_path %>
+<%target=Expense.find((params.require(:format))) %>
+<table class="table">
+  <thead>
+  <tr>
+    <th>
+      статус
+    </th>
+    <th>
+      заметка
+    </th>
+    <th>
+      количество рублей
+    </th>
+  </tr>
+  </thead>
+<tr>
+  <td>
+  <% if target.status  %>
+   <h5>Важно</h5>
+      <%else %>
+      <H4>повседневно</H4>
+<%end %>
+  </td>
+  <td>
+<%=target.text %>
+  </td>
+  <td>
+<%=target.summ %>
+</tr>
+</td>
+</table>
+<%= link_to 'Edit', edit_expense_path,class:"one" %> |
+<%= link_to 'back' ,expenses_path(Expense.find(params.require(:format)).category_id),class:"one" %>

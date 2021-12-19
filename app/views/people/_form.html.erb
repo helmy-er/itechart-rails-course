@@ -1,20 +1,11 @@
-<%= form_with(model: person) do |form| %>
-  <% if person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
-
-      <ul>
-        <% person.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<div class="edit"><center>
+<%= form_with(model: person ) do |form| %>
+    <%=render 'errors',resource: person %>
     <%= form.label :имя %>
     <%= form.text_field :name %>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit  %>
   </div>
 <% end %>
+</center>
+</div>
