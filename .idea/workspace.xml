@@ -25,7 +25,24 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9578d22d-21e4-4da6-85ad-66537a8c6604" name="Changes" comment="node module" />
+    <list default="true" id="9578d22d-21e4-4da6-85ad-66537a8c6604" name="Changes" comment="node module">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/buffers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/buffers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/categories.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/expenses.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/expenses.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/people.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/people.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/persons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/persons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initializers/assets.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controllers/expenses_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/expenses_controller_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controllers/people_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/people_controller_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controllers/persons_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/persons_controller_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/models/expense_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/expense_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/models/person_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/person_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/models/user_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/user_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/system/expenses_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/system/expenses_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/system/people_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/system/people_test.rb" afterDir="false" />
+    </list>
     <list id="db79925b-5359-4257-bf87-b78aee909c81" name="read me" comment="read me">
       <changelist_data name="helmy-er" email="helbmerliuni@gmail.com" date="1639932567000" />
     </list>
@@ -424,6 +441,7 @@
       <workItem from="1639901349090" duration="1861000" />
       <workItem from="1639932583559" duration="62000" />
       <workItem from="1639932686621" duration="994000" />
+      <workItem from="1639933790314" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="5-complete">
       <created>1638899297718</created>
@@ -502,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639933440498</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="node module">
+      <created>1639933983761</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1639933983762</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,9 +563,9 @@
     <MESSAGE value="add rspec and rubocop" />
     <MESSAGE value="version 1_3" />
     <MESSAGE value="to cherry" />
-    <MESSAGE value="node module" />
     <MESSAGE value="&#10;&#10;(cherry picked from commit a0ee7050c3f740e0d2324e5802614cf6f2b3121f)" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;&#10;(cherry picked from commit a0ee7050c3f740e0d2324e5802614cf6f2b3121f)" />
+    <MESSAGE value="node module" />
+    <option name="LAST_COMMIT_MESSAGE" value="node module" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="0" key="CommitChangelistDialog2" timestamp="1639933438311">
