@@ -20,21 +20,20 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:to_check" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9578d22d-21e4-4da6-85ad-66537a8c6604" name="Changes" comment="add rspec and rubocop">
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/itechart-rails-course-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/itechart-rails-course-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9578d22d-21e4-4da6-85ad-66537a8c6604" name="Changes" comment="node module" />
     <list id="db79925b-5359-4257-bf87-b78aee909c81" name="read me" comment="read me">
       <changelist_data name="helmy-er" email="helbmerliuni@gmail.com" date="1639932567000" />
     </list>
     <list id="ea4c1620-2cce-4842-b3f9-24295a2a804d" name="to cherry" comment="to cherry">
       <changelist_data name="helmy-er" email="helbmerliuni@gmail.com" date="1639932156000" />
+    </list>
+    <list id="a27d0405-3891-4e61-bad5-e7f1a7256be5" name="to cherry-2" comment="to cherry">
+      <changelist_data name="helmy-er" email="helbmerliuni@gmail.com" date="1639932142000" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -424,7 +423,7 @@
       <workItem from="1639900720554" duration="466000" />
       <workItem from="1639901349090" duration="1861000" />
       <workItem from="1639932583559" duration="62000" />
-      <workItem from="1639932686621" duration="367000" />
+      <workItem from="1639932686621" duration="994000" />
     </task>
     <task id="LOCAL-00001" summary="5-complete">
       <created>1638899297718</created>
@@ -489,7 +488,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639932765955</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="node module">
+      <created>1639933297165</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1639933297165</updated>
+    </task>
+    <task id="LOCAL-00011" summary="&#10;&#10;(cherry picked from commit a0ee7050c3f740e0d2324e5802614cf6f2b3121f)">
+      <created>1639933440498</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1639933440498</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +519,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="to_check" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -525,13 +538,19 @@
     <MESSAGE value="add rspec and rubocop" />
     <MESSAGE value="version 1_3" />
     <MESSAGE value="to cherry" />
-    <option name="LAST_COMMIT_MESSAGE" value="to cherry" />
+    <MESSAGE value="node module" />
+    <MESSAGE value="&#10;&#10;(cherry picked from commit a0ee7050c3f740e0d2324e5802614cf6f2b3121f)" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;&#10;(cherry picked from commit a0ee7050c3f740e0d2324e5802614cf6f2b3121f)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="0" key="CommitChangelistDialog2" timestamp="1639932763869">
+    <state x="320" y="0" key="CommitChangelistDialog2" timestamp="1639933438311">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="320" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1639932763868" />
+    <state x="320" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1639933438311" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1639933698248">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1639933698248" />
     <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1639933049965">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -540,10 +559,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="493" y="281" key="Github.CreateGistDialog/0.0.1366.728@0.0.1366.728" timestamp="1639901109705" />
-    <state x="123" y="90" width="1221" height="518" key="MultipleFileMergeDialog" timestamp="1639932735833">
+    <state x="179" y="40" key="MergeDialog" timestamp="1639933329806">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="123" y="90" width="1221" height="518" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1639932735833" />
+    <state x="179" y="40" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1639933329806" />
+    <state x="123" y="90" width="1221" height="518" key="MultipleFileMergeDialog" timestamp="1639933419004">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="123" y="90" width="1221" height="518" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1639933419004" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1639902284851">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
