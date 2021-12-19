@@ -1,0 +1,61 @@
+<html>
+<head>
+</head>
+<body>
+<p id="notice"><%= notice %></p>
+<h1>Expenses</h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th >имя</th>
+    <th>дата</th>
+    <th colspan="4">действия</th>
+  </tr>
+  </thead>
+  <% person_id=params.require(:people_id) %>
+  <tbody>
+  <% @expenses.each do |expense| %>
+    <% if !expense.status %>
+      <tr>
+        <td><%= expense.name %></td>
+        <td><%= expense.time %></td>
+        <td><%= link_to 'show', expense_path(expense) %></td>
+        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <%=link_to "edit",edit_expense_path(expense.id) %></td>
+      </tr>
+    <%end %>
+  <% end %>
+  </tbody>
+</table>
+<div>
+  <h1>Важные</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th >имя</th>
+      <th>дата</th>
+      <th colspan="4">действия</th>
+    </tr>
+    </thead>
+    <% person_id=params.require(:people_id) %>
+    <tbody>
+    <% @expenses.each do |expense| %>
+      <% if expense.status %>
+        <tr>
+          <td><%= expense.name %></td>
+          <td><%= expense.time %></td>
+          <td><%= link_to 'show', expense_path(expense) %></td>
+          <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td> <%=link_to "edit",edit_expense_path(expense.id) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+<%= link_to 'New Expense', new_expense_path(person_id),class:"one" %>
+<td><%= link_to 'Back', people_path,class:"one" %></td>
+
+</body>
+</html>

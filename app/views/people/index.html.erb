@@ -1,0 +1,33 @@
+<body>
+<p id="notice"><%= notice %></p>
+<div ><center>
+<h1>People</h1>
+<table  class="table">
+    <thead>
+    <tr>
+      <th >имя</th>
+      <th colspan="6"><center>дейсвтие</center></th>
+    </tr>
+    </thead>
+  <tbody>
+      <tr>
+        <td><%= @people.first.name %> </td>
+        <td><%= link_to 'category',categories_path(@people.first.id)%></td>
+      </tr>
+      <tr>
+          <% @people.drop(1).each do |person| %>
+          <td> <%= person.name%></td>
+          <td><%= link_to 'Edit', edit_person_path(person) %></td>
+          <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'category',categories_path(person.id)%></td>
+
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Person', new_person_path,class:"one" %>
+  <%= link_to 'Back', root_path,class:"one" %>
+</center>
+</div>
+</body>

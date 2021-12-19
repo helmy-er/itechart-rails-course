@@ -1,0 +1,42 @@
+<body>
+<p id="notice"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th >имя</th>
+    <th colspan="3">дейсвтие</th>
+    <th >количество записей</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%count=0 %>
+    <% @categories.each do |category| %>
+    <%count+=1 %>
+      <tr>
+        <td><%=link_to category.name,expenses_path(category.id),class: 'name' %></td>
+        <td><%= link_to 'open', expenses_path(category.id) %></td>
+        <td><%= link_to 'Edit', edit_category_path(category.id) %></td>
+        <% if count!=1%>
+        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end %>
+          <% if category.status %>
+        <td>Доход</td>
+          <%else %>
+        <td>Расход</td>
+        <% end %>
+        <td><%=category.expenses.count %></td>
+        <script> console.log(Category.last)</script>
+        <%end %>
+          </tr>
+  </tbody>
+</table>
+
+<br>
+<td><%= link_to 'statistik', categories_statistics_categoty_id_path(params.require(:people_id)) ,class:"one" %></td>
+<%= link_to 'New Category', new_category_path(params.require(:people_id)),class:"one" %>
+<%= link_to 'back', people_path(params.require(:people_id)),class:"one" %>
+</body>
