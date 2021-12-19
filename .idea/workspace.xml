@@ -13,19 +13,29 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:version_1" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:to_check" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9578d22d-21e4-4da6-85ad-66537a8c6604" name="Changes" comment="add rspec and rubocop" />
+    <list default="true" id="9578d22d-21e4-4da6-85ad-66537a8c6604" name="Changes" comment="add rspec and rubocop">
+      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/itechart-rails-course-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/itechart-rails-course-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <list id="db79925b-5359-4257-bf87-b78aee909c81" name="read me" comment="read me">
+      <changelist_data name="helmy-er" email="helbmerliuni@gmail.com" date="1639932567000" />
+    </list>
+    <list id="ea4c1620-2cce-4842-b3f9-24295a2a804d" name="to cherry" comment="to cherry">
+      <changelist_data name="helmy-er" email="helbmerliuni@gmail.com" date="1639932156000" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +63,11 @@
         </map>
       </branch-storage>
     </favorite-branches>
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="helmy-er &lt;helbmerliuni@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/app" value="version_1" />
@@ -88,7 +103,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test-master (2)/test-master" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -408,6 +423,8 @@
       <workItem from="1639896787152" duration="3307000" />
       <workItem from="1639900720554" duration="466000" />
       <workItem from="1639901349090" duration="1861000" />
+      <workItem from="1639932583559" duration="62000" />
+      <workItem from="1639932686621" duration="367000" />
     </task>
     <task id="LOCAL-00001" summary="5-complete">
       <created>1638899297718</created>
@@ -465,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639900780111</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="to cherry">
+      <created>1639932765955</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639932765955</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +506,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="to_check" />
                       </list>
                     </value>
                   </entry>
@@ -500,17 +524,26 @@
     <MESSAGE value="сделал все кроме rspec для categories" />
     <MESSAGE value="add rspec and rubocop" />
     <MESSAGE value="version 1_3" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1_3" />
+    <MESSAGE value="to cherry" />
+    <option name="LAST_COMMIT_MESSAGE" value="to cherry" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1639857524961">
+    <state x="320" y="0" key="CommitChangelistDialog2" timestamp="1639932763869">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1639857524961" />
+    <state x="320" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1639932763868" />
+    <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1639933049965">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1639933049965" />
     <state x="493" y="281" key="Github.CreateGistDialog" timestamp="1639901109705">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="493" y="281" key="Github.CreateGistDialog/0.0.1366.728@0.0.1366.728" timestamp="1639901109705" />
+    <state x="123" y="90" width="1221" height="518" key="MultipleFileMergeDialog" timestamp="1639932735833">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="123" y="90" width="1221" height="518" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1639932735833" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1639902284851">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
