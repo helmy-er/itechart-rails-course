@@ -38,24 +38,23 @@
   </ul>
 </div>
 <div id="chart_div" style="width: 100%; height: 500px;"></div>
-
-<script src="moment.min.js"></script>
-<script src="twix.min.js"></script>
 <script>
     data=gon.data
     data1=gon.space
     var now = new Date();
-    dates=labels(1,now.getDate(),now.getMonth()+1)
-    drow()
-    function drow() {
+    var firstDay = new Date(now.getFullYear(), now.getMonth(), 1)
+    drow(firstDay,now)
+    function drow(a,b) {
+
+        labels=date(a,b)
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: dates,
+                labels: labels,
                 datasets: [{
                     label: 'доходы',
-                    data: setdata(dates),
+                    data: setdata(labels),
                     backgroundColor: [
                         'rgba(255, 99, 132, 1)',
                     ],
@@ -66,7 +65,7 @@
                     borderWidth: 1
                 },{
                     label: 'траты',
-                    data: setdata1(dates),
+                    data: setdata1(labels),
                     backgroundColor: [
 
                         'rgba(54, 162, 235, 1)'
@@ -79,14 +78,7 @@
             },
         });
     }
-    function labels(start_date,end_date,month){
-        standart_labels=[]
-        for (let i = start_date; i <= end_date; i++)
-        {
-            standart_labels.push(month+'-'+i)
-        }
-        return standart_labels
-    }
+    // заполняет дату расходов
     function setdata(date) {
         new_data=[]
         for (let i in date) {
@@ -94,31 +86,43 @@
         }
         return new_data
     }
+    // заполняет дату прибыли
     function setdata1(date) {
+        console.log(date)
         new_data=[]
         for (let i in date) {
             new_data.push(data1[date[i]])
         }
         return new_data
     }
+    // рисует график с новой датой
     function newdate(){
-        start_date=document.getElementById('start')
-        end_date=document.getElementById('end')
-        first_day=Number(((start_date.value).split('-'))[2])
-        last_day=Number(((end_date.value).split('-'))[2])
-        montn=Number(((start_date.value).split('-'))[1])
-        dates=labels(first_day,last_day,montn)
-        updated_data=setdata(dates)
+        start_date=new Date(document.getElementById('start').value)
+        end_date =new Date(document.getElementById('end').value)
         document.getElementById('myChart').remove()
         let div =  document. createElement('canvas')
         div.id='myChart'
         place=document.getElementById('insert')
         place.append(div);
-        drow()
+        drow(start_date,end_date)
     }
-console.log(gon.space)
-console.log(gon.data)
+    // возращает список дат из диапазона
+    //
+    //
+    function date(date,date2){
+
+        set_date=[]
+        while (date < date2) {
+            day=date.getDate()
+            montn=date.getMonth()+1
+            set_date.push(montn+'-'+day)
+            date.setDate( date.getDate() + 1 )
+        }
+        return set_date
+    }
+
 </script>
+
 </body>
 </html>
 

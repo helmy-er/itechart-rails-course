@@ -129,6 +129,9 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.5.1, ruby-2.6.9-p207) [gem]" level="application" />
+    <orderEntry type="library" name="moment.js" level="application" />
+    <orderEntry type="library" name="twix.js" level="application" />
+    <orderEntry type="library" name="chart.js" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
