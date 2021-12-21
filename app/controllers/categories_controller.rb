@@ -11,10 +11,10 @@ class CategoriesController < ApplicationController
   end
 
   def days_in_month(month, year = Time.now.year)
-    daysInMonth = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    days_in_month = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     return 29 if month == 2 && Date.gregorian_leap?(year)
 
-    daysInMonth[month]
+    days_in_month[month]
   end
 
   # GET /categories/1 or /categories/1.json
