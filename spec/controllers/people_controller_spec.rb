@@ -4,8 +4,7 @@ require 'rails_helper'
 describe PeopleController do
   describe 'create' do
     it 'should create' do
-      user = FactoryGirl.create(:user)
-      sign_in user
+      sign_in  FactoryGirl.create(:user)
       post :create, params: { person: { name: 'Pavel' } }
       response.should redirect_to people_path
     end
@@ -27,11 +26,6 @@ describe PeopleController do
       person = FactoryGirl.create(:person)
       patch :update, params: { id: person.id, person: { name: '' } }
       expect(response).to have_http_status(:unprocessable_entity)
-    end
-  end
-  describe 'test' do
-    it 'test factory' do
-      man = FactoryGirl.create(:person)
     end
   end
 end

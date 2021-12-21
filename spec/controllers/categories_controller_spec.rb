@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-include Warden::Test::Helpers
-Warden.test_mode!
 
 describe CategoriesController do
   describe 'create' do
@@ -17,7 +15,6 @@ describe CategoriesController do
     it 'not working create action' do
       user = FactoryGirl.create(:user)
       person = FactoryGirl.create(:person)
-      category = FactoryGirl.create(:category)
       sign_in user
       post :create, params: { category: { name: '', status: 1, for_all: 1 }, format: person.id }
       response.should redirect_to new_category_path(person.id)
