@@ -72,5 +72,3 @@ Style/Documentation:
 Style/GuardClause:
   Exclude:
     - 'app/controllers/people_controller.rb'
-
-
