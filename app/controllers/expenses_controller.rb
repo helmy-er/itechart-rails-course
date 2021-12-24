@@ -5,6 +5,7 @@ class ExpensesController < ApplicationController
   def index
     target = Category.find(params.require(:people_id))
     @expenses = target.expenses.all
+    @people_id = Buffer.find_by(category_id: target).person_id
   end
 
   # GET /expenses/1 or /expenses/1.json
@@ -17,6 +18,15 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/1/edit
   def edit; end
+
+  def notes
+    target = Category.find(params.require(:people_id))
+    @note_expenses = []
+    notes = target.expenses.all
+    notes.each do |a|
+      @note_expenses.append(a) unless a.text.delete(' ').empty?
+    end
+  end
 
   # POST /expenses or /expenses.json
   def create

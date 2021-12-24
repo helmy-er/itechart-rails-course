@@ -19,17 +19,21 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:to_check" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/to_check" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="исправил баг с node modules 2">
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="generators&#10;&#10;generators">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rubocop_todo.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/expenses/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/expenses/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +56,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="22VuAzJJeD2g4laV9l2CTL1acEg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -64,7 +69,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
-  <component name="RunManager" selected="RSpec.CategoriesController">
+  <component name="RunManager" selected="Ruby.test">
     <configuration name="CategoriesController create..." type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="itechart-rails-course" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -270,12 +275,28 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="itechart-rails-course" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/test.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="RSpec.CategoriesController" />
-        <item itemvalue="RSpec.CategoriesController create..." />
-        <item itemvalue="RSpec.CategoriesController delete" />
+        <item itemvalue="Ruby.test" />
         <item itemvalue="RSpec.PeopleController" />
+        <item itemvalue="RSpec.CategoriesController delete" />
+        <item itemvalue="RSpec.CategoriesController create..." />
+        <item itemvalue="RSpec.CategoriesController" />
       </list>
     </recent_temporary>
   </component>
@@ -303,6 +324,9 @@
       <workItem from="1640091526014" duration="74000" />
       <workItem from="1640091899596" duration="206000" />
       <workItem from="1640107299752" duration="6158000" />
+      <workItem from="1640199828321" duration="88000" />
+      <workItem from="1640200680635" duration="98000" />
+      <workItem from="1640363622056" duration="3187000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -342,7 +366,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="to_check" />
+                        <option value="origin/to_check" />
                       </list>
                     </value>
                   </entry>
@@ -363,26 +387,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="исправил баг с node modules 2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640092103928">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640199921089">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1640092103928" />
-    <state width="1323" height="253" key="GridCell.Tab.0.bottom" timestamp="1640016722701">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1640199921089" />
+    <state width="1323" height="134" key="GridCell.Tab.0.bottom" timestamp="1640365440994">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640016722701" />
-    <state width="1323" height="253" key="GridCell.Tab.0.center" timestamp="1640016722700">
+    <state width="1323" height="134" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640365440994" />
+    <state width="1323" height="134" key="GridCell.Tab.0.center" timestamp="1640365440994">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640016722700" />
-    <state width="1323" height="253" key="GridCell.Tab.0.left" timestamp="1640016722700">
+    <state width="1323" height="134" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640365440994" />
+    <state width="1323" height="134" key="GridCell.Tab.0.left" timestamp="1640365440994">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640016722700" />
-    <state width="1323" height="253" key="GridCell.Tab.0.right" timestamp="1640016722701">
+    <state width="1323" height="134" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640365440994" />
+    <state width="1323" height="134" key="GridCell.Tab.0.right" timestamp="1640365440994">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640016722701" />
+    <state width="1323" height="134" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640365440994" />
     <state width="1323" height="253" key="GridCell.Tab.1.bottom" timestamp="1640016722702">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -403,14 +427,15 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1640092091192" />
-    <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1640092053527">
+    <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1640366569434">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.728@0.0.1366.728" timestamp="1640092053527" />
+    <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.728@0.0.1366.728" timestamp="1640366569434" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/itechart_rails_course@PeopleController.rcov" NAME="PeopleController Coverage Results" MODIFIED="1640015071680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@CategoriesController_create___.rcov" NAME="CategoriesController create... Coverage Results" MODIFIED="1640015258934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
+    <SUITE FILE_PATH="coverage/itechart_rails_course@test.rcov" NAME="test Coverage Results" MODIFIED="1640365051151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@CategoriesController.rcov" NAME="CategoriesController Coverage Results" MODIFIED="1640015301520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@CategoriesController_delete.rcov" NAME="CategoriesController delete Coverage Results" MODIFIED="1640015213794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
   </component>
