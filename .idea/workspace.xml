@@ -26,14 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="generators&#10;&#10;generators">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change rubocop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.rubocop_todo.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/expenses/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/expenses/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/people/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/people/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +321,10 @@
       <workItem from="1640107299752" duration="6158000" />
       <workItem from="1640199828321" duration="88000" />
       <workItem from="1640200680635" duration="98000" />
-      <workItem from="1640363622056" duration="3187000" />
+      <workItem from="1640363622056" duration="3526000" />
+      <workItem from="1640368124284" duration="202000" />
+      <workItem from="1640368430651" duration="5000" />
+      <workItem from="1640431931842" duration="1293000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -349,7 +347,21 @@
       <option name="project" value="LOCAL" />
       <updated>1640091952117</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add button to check expenses with notes">
+      <created>1640367075325</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640367075326</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change rubocop">
+      <created>1640367095411</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640367095411</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,29 +396,31 @@
     <MESSAGE value="исправил баг с разными месяцами" />
     <MESSAGE value="исправил баг с node modules" />
     <MESSAGE value="исправил баг с node modules 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправил баг с node modules 2" />
+    <MESSAGE value="add button to check expenses with notes" />
+    <MESSAGE value="change rubocop" />
+    <option name="LAST_COMMIT_MESSAGE" value="change rubocop" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640199921089">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640368324547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1640199921089" />
-    <state width="1323" height="134" key="GridCell.Tab.0.bottom" timestamp="1640365440994">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1640368324547" />
+    <state width="1323" height="134" key="GridCell.Tab.0.bottom" timestamp="1640367203639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="134" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640365440994" />
-    <state width="1323" height="134" key="GridCell.Tab.0.center" timestamp="1640365440994">
+    <state width="1323" height="134" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640367203639" />
+    <state width="1323" height="134" key="GridCell.Tab.0.center" timestamp="1640367203639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="134" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640365440994" />
-    <state width="1323" height="134" key="GridCell.Tab.0.left" timestamp="1640365440994">
+    <state width="1323" height="134" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640367203639" />
+    <state width="1323" height="134" key="GridCell.Tab.0.left" timestamp="1640367203639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="134" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640365440994" />
-    <state width="1323" height="134" key="GridCell.Tab.0.right" timestamp="1640365440994">
+    <state width="1323" height="134" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640367203639" />
+    <state width="1323" height="134" key="GridCell.Tab.0.right" timestamp="1640367203639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="134" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640365440994" />
+    <state width="1323" height="134" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640367203639" />
     <state width="1323" height="253" key="GridCell.Tab.1.bottom" timestamp="1640016722702">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -423,10 +437,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="253" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1640016722702" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1640092091192">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1640367113890">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1640092091192" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1640367113890" />
     <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1640366569434">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
