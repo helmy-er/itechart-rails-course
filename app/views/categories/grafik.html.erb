@@ -15,16 +15,18 @@
     <input type="button" value="подтвердить" onclick="newdate()">
   </center>
 </div>
+<center>
 <%=link_to 'Back' ,people_path ,class:"one"%>
-<h5>Имена записей </h5>
+</center>
+  <h5>Имена записей </h5>
 <div><ul>
-  <%for i in @names %>
+  <%for i in @expenses_names %>
     <li><%= i %></li>
     <% end %></ul>
 </div>
 <h5>Имена категорий расходов </h5>
  <div><ul>
-  <%for i in @names_expenses %>
+  <%for i in @names[0] %>
     <li><%= i %></li>
   <% end %>
 </ul>
@@ -32,15 +34,15 @@
 <h5>Имена категорий доходов </h5>
 <div>
   <ul>
-  <%for i in @names_of_income %>
+  <%for i in @names[1] %>
       <li><%= i %></li>
   <% end %>
   </ul>
 </div>
 <div id="chart_div" style="width: 100%; height: 500px;"></div>
 <script>
-    data=gon.data
-    data1=gon.space
+    data=gon.data_income
+    data1=gon.date_expenses
     var now = new Date();
     var firstDay = new Date(now.getFullYear(), now.getMonth(), 1)
     drow(firstDay,now)

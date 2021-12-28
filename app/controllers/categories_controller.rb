@@ -4,8 +4,8 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     if Category.count.zero?
-      Buffer.create(category_id: 1, person_id: params.require(:people_id)).save(validate: false)
-      Category.new(name: 'expenses', status: false).save(validate: false)
+      Category.new(name: 'expenses', status: false).save()
+      Buffer.create(category_id: Category.last, person_id: params.require(:people_id)).save(validate: false)
     end
     @categories = Person.find(params.require(:people_id)).categories.all
   end
@@ -28,22 +28,26 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-    @person_id = Buffer.find_by(category_id: params.require(:format)).person_id
+    if Buffer.find_by(category_id: params.require(:format))==nil
+      redirect_to notfound_path
+    else
+      @person_id = Buffer.find_by(category_id: params.require(:format)).person_id
+    end
   end
+  def notfound;end
 
   # POST /categories or /categories.json
   def create
-    name = params[:category].permit(:name)[:name]
-    if name != ''
+    if params[:category][:name].present?
       status = params[:category].require(:status) == '1'
+      @category = Category.new(name: params[:category].require(:name), status: status)
       if params[:category].require(:for_all) == '1'
         all_people = current_user.people
-        all_people.each { |a| Buffer.create(category_id: Category.last.id + 1, person_id: a.id).save(validate: false) }
+        all_people.each { |a| Buffer.create(category_id: Category.last.id + 1, person_id: a.id).save() }
       else
-        Buffer.create(category_id: Category.last.id + 1, person_id: params.require(:format)).save(validate: false)
+        Buffer.create(category_id: Category.last.id, person_id: params.require(:format)).save()
       end
-      @category = Category.new(name: params[:category].require(:name), status: status)
-      redirect_to categories_path(params.require(:format)) if @category.save(validate: false)
+      redirect_to categories_path(params.require(:format)) if @category.save()
     else
       redirect_to new_category_path(params.require(:format))
     end
@@ -53,30 +57,30 @@ class CategoriesController < ApplicationController
 
   def grafik
     category_id = params[:category].require(:category_id).drop(1)
+    #hach with income
     data = {}
+    #hach with expenses
     data_expenses = {}
-    @names_expenses = []
-    @names_of_income = []
-    @names = []
+    #names of categories
+    @names = get_cat_names(category_id)
+    # names of expenses that were used
+    @expenses_names=[]
     category_id.each do |i|
-      if Category.find(i).status
-        @names_expenses.append(Category.find(i).name)
-      else
-        @names_of_income.append(Category.find(i).name) unless Category.find(i).status
-      end
       Category.find(i).expenses.each do |a|
         if Category.find(i).status
-          @names.append(a.name)
+          @expenses_names.append(a.name)
+          # create date like 11-2 where the first number is month and the  second number is day
           time = "#{a.time.month}-#{a.time.day}"
+          #filling  the hash with money
           if data[time].nil?
             data[time] = a.summ
-
           else
+            # if there is money on the checked   day, they add up
             data[time] += a.summ
           end
         else
           unless Category.find(i).status
-            @names.append(a.name)
+            @expenses_names.append(a.name)
             time = "#{a.time.month}-#{a.time.day}"
             if data_expenses[time].nil?
               data_expenses[time] = a.summ
@@ -87,8 +91,8 @@ class CategoriesController < ApplicationController
         end
       end
     end
-    gon.data = data
-    gon.space = data_expenses
+    gon.data_income = data
+    gon.date_expenses = data_expenses
   end
 
   # PATCH/PUT /categories/1 or /categories/1.json
@@ -97,13 +101,13 @@ class CategoriesController < ApplicationController
     buffer = Buffer.find_by(category_id: target_category_id)
     @target_person_id = buffer.person_id
     target_category = Category.find(target_category_id)
-    name = params[:category].permit(:name)[:name]
-    if name != ''
+    name = params[:category][:name]
+    if name.present?
       if params[:category].require(:for_all) == '1'
         all_people = current_user.people
-        all_people.each { |a| Buffer.create(category_id: Category.last.id + 1, person_id: a.id).save(validate: false) }
+        all_people.each { |a| Buffer.create(category_id:target_category_id, person_id: a.id).save() }
       else
-        Buffer.create(category_id: Category.last.id + 1, person_id: params.require(:format)).save(validate: false)
+        Buffer.create(category_id: target_category_id, person_id:@target_person_id).save()
       end
       status = if (status = '1')
                  true
@@ -122,7 +126,18 @@ class CategoriesController < ApplicationController
     target = Buffer.find_by(category_id: params.require(:format)).person_id
     redirect_to categories_path(target) if Category.find(params.require(:format)).destroy
   end
-
+  def get_cat_names(category_id)
+    names_expenses=[]
+    names_of_income=[]
+    category_id.each do |i|
+      if Category.find(i).status
+        names_expenses.append(Category.find(i).name)
+      else
+        names_of_income.append(Category.find(i).name) unless Category.find(i).status
+      end
+    end
+    [names_expenses,names_of_income]
+  end
   private
 
   # Use callbacks to share common setup or constraints between actions.

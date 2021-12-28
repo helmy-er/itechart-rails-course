@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get '/categories/statistics/categoty_id', to: 'categories#statistics'
   get '/graphik', to: 'categories#grafik'
   get '/notes/:people_id', to: 'expenses#notes', as: 'notes'
+  get '/notfound', to: 'categories#notfound', as: 'notfound'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

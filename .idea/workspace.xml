@@ -21,14 +21,20 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/to_check" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/test" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change rubocop">
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change people_index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/people/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/people/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/buffers_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/categories/grafik.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/grafik.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/controllers/expenses_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/expenses_controller_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +330,9 @@
       <workItem from="1640363622056" duration="3526000" />
       <workItem from="1640368124284" duration="202000" />
       <workItem from="1640368430651" duration="5000" />
-      <workItem from="1640431931842" duration="1293000" />
+      <workItem from="1640431931842" duration="2290000" />
+      <workItem from="1640685831754" duration="6527000" />
+      <workItem from="1640702013156" duration="790000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -361,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640367095411</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="change people_index">
+      <created>1640433345427</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1640433345427</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +393,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/to_check" />
+                        <option value="origin/test" />
                       </list>
                     </value>
                   </entry>
@@ -398,29 +413,30 @@
     <MESSAGE value="исправил баг с node modules 2" />
     <MESSAGE value="add button to check expenses with notes" />
     <MESSAGE value="change rubocop" />
-    <option name="LAST_COMMIT_MESSAGE" value="change rubocop" />
+    <MESSAGE value="change people_index" />
+    <option name="LAST_COMMIT_MESSAGE" value="change people_index" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640368324547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1640368324547" />
-    <state width="1323" height="134" key="GridCell.Tab.0.bottom" timestamp="1640367203639">
+    <state width="1323" height="134" key="GridCell.Tab.0.bottom" timestamp="1640702620431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="134" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640367203639" />
-    <state width="1323" height="134" key="GridCell.Tab.0.center" timestamp="1640367203639">
+    <state width="1323" height="134" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640702620431" />
+    <state width="1323" height="134" key="GridCell.Tab.0.center" timestamp="1640702620431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="134" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640367203639" />
-    <state width="1323" height="134" key="GridCell.Tab.0.left" timestamp="1640367203639">
+    <state width="1323" height="134" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640702620431" />
+    <state width="1323" height="134" key="GridCell.Tab.0.left" timestamp="1640702620431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="134" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640367203639" />
-    <state width="1323" height="134" key="GridCell.Tab.0.right" timestamp="1640367203639">
+    <state width="1323" height="134" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640702620431" />
+    <state width="1323" height="134" key="GridCell.Tab.0.right" timestamp="1640702620431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="134" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640367203639" />
+    <state width="1323" height="134" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640702620431" />
     <state width="1323" height="253" key="GridCell.Tab.1.bottom" timestamp="1640016722702">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -437,19 +453,23 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="253" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1640016722702" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1640367113890">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1640433498910">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1640367113890" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1640433498910" />
     <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1640366569434">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.728@0.0.1366.728" timestamp="1640366569434" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1640686397094">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1640686397094" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/itechart_rails_course@PeopleController.rcov" NAME="PeopleController Coverage Results" MODIFIED="1640015071680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@CategoriesController_create___.rcov" NAME="CategoriesController create... Coverage Results" MODIFIED="1640015258934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
-    <SUITE FILE_PATH="coverage/itechart_rails_course@test.rcov" NAME="test Coverage Results" MODIFIED="1640365051151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
+    <SUITE FILE_PATH="coverage/itechart_rails_course@test.rcov" NAME="test Coverage Results" MODIFIED="1640702552040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@CategoriesController.rcov" NAME="CategoriesController Coverage Results" MODIFIED="1640015301520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@CategoriesController_delete.rcov" NAME="CategoriesController delete Coverage Results" MODIFIED="1640015213794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
   </component>

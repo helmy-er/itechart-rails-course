@@ -5,8 +5,10 @@ require 'rails_helper'
 describe ExpensesController do
   describe 'index' do
     it 'should find expenses' do
-      caregory = FactoryGirl.create(:category)
-      get  :index, params: { people_id: caregory.id }
+      category = FactoryGirl.create(:category)
+      person=FactoryGirl.create(:person)
+      buffer = FactoryGirl.create(:buffer, category_id: category.id,person_id: person.id)
+      get  :index, params: { people_id: category.id }
     end
   end
   describe 'create' do
