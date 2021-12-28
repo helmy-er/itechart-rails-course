@@ -25,7 +25,7 @@ class PeopleController < ApplicationController
 
   # POST /people or /people.json
   def create
-    if params[:person].permit(:name)[:name] != ''
+    if params[:person][:name].present?
       @person = Person.create(name: params[:person].require(:name), user_id: current_user.id)
       respond_to do |format|
         if @person.save
@@ -36,7 +36,6 @@ class PeopleController < ApplicationController
           format.json { render json: @person.errors, status: :unprocessable_entity }
         end
       end
-
     else
       redirect_to new_person_path
     end
@@ -45,7 +44,7 @@ class PeopleController < ApplicationController
   # PATCH/PUT /people/1 or /people/1.json
   def update
     respond_to do |format|
-      if params.require(:person).permit(:name)[:name] != ''
+      if params.require(:person)[:name].present?
         if @person.update(person_params)
           format.html { redirect_to people_path, notice: 'Person was successfully updated.' }
           format.json { render :show, status: :ok, location: @person }
@@ -55,6 +54,8 @@ class PeopleController < ApplicationController
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
     end
+  rescue StandardError
+    redirect_to notfound_path
   end
 
   # DELETE /people/1 or /people/1.json

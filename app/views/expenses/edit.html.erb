@@ -15,5 +15,4 @@
   <br>
   <%= form.submit %>
 <% end %>
-<% id=Expense.find(expense).category_id %>
-<%= link_to 'Back',  expenses_path(id) ,class:"one"%>
+<%= link_to 'Back',  expenses_path(@id) ,class:"one"%>

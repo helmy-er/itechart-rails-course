@@ -17,7 +17,12 @@ class ExpensesController < ApplicationController
   end
 
   # GET /expenses/1/edit
-  def edit; end
+  def edit
+    expense = params.require(:format)
+    @id = Expense.find(expense).category_id
+  rescue ActiveRecord::RecordNotFound
+    redirect_to notfound_path
+  end
 
   def notes
     target = Category.find(params.require(:people_id))
@@ -31,7 +36,7 @@ class ExpensesController < ApplicationController
   # POST /expenses or /expenses.json
   def create
     param = get_params_to_create
-    if param[0] != '' && param[2] != '' && param[4] != ''
+    if param[0].present? && param[2].present? && param[4].present?
       status = params[:expense].require(:status) == '1'
       @expense = Expense.new(name: param[0], text:  param[1],
                              time: param[4], category_id:  param[3], status: status, summ:  param[2])
@@ -43,12 +48,12 @@ class ExpensesController < ApplicationController
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update
-    name = params[:expense].permit(:name)[:name]
-    text = params[:expense].permit(:text)[:text]
-    status = params[:expense].permit(:status)[:status]
-    summ = params[:expense].permit(:summa)[:summa]
-    time = params[:expense].permit(:date)[:date]
-    if name != '' && text != '' && summ != '' && time != ''
+    name = params[:expense][:name]
+    text = params[:expense][:text]
+    status = params[:expense][:status]
+    summ = params[:expense][:summa]
+    time = params[:expense][:date]
+    if name.present? && text.present? && summ.present? && time.present?
       status = status == '1'
       @expense = Expense.find(params.require(:format))
       @peoples_id = Expense.find(params.require(:format)).category_id
@@ -56,6 +61,8 @@ class ExpensesController < ApplicationController
     else
       redirect_to edit_expense_path(params.require(:format))
     end
+  rescue NoMethodError
+    redirect_to notfound_path
   end
 
   # DELETE /expenses/1 or /expenses/1.json
@@ -67,10 +74,10 @@ class ExpensesController < ApplicationController
 
   def get_params_to_create
     id = params.require(:format)
-    name = params[:expense].permit(:name)[:name]
-    text = params[:expense].permit(:text)[:text]
-    sum = params[:expense].permit(:summa)[:summa]
-    time = params[:expense].permit(:date)[:date]
+    name = params[:expense][:name]
+    text = params[:expense][:text]
+    sum = params[:expense][:summa]
+    time = params[:expense][:date]
     [name, text, sum, id, time]
   end
 

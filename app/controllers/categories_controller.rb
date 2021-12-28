@@ -4,10 +4,12 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     if Category.count.zero?
-      Category.new(name: 'expenses', status: false).save()
-      Buffer.create(category_id: Category.last, person_id: params.require(:people_id)).save(validate: false)
+      Category.new(name: 'expenses', status: false).save
+      Buffer.create(category_id: Category.last, person_id: params.require(:people_id)).save
     end
     @categories = Person.find(params.require(:people_id)).categories.all
+  rescue ActiveRecord::RecordNotFound
+    redirect_to notfound_path
   end
 
   def days_in_month(month, year = Time.now.year)
@@ -28,50 +30,51 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-    if Buffer.find_by(category_id: params.require(:format))==nil
-      redirect_to notfound_path
-    else
-      @person_id = Buffer.find_by(category_id: params.require(:format)).person_id
-    end
+    @person_id = Buffer.find_by(category_id: params.require(:format)).person_id
+  rescue NoMethodError
+    redirect_to notfound_path
   end
-  def notfound;end
+
+  def notfound; end
 
   # POST /categories or /categories.json
   def create
     if params[:category][:name].present?
       status = params[:category].require(:status) == '1'
-      @category = Category.new(name: params[:category].require(:name), status: status)
+      Category.new(name: params[:category].require(:name), status: status).save
       if params[:category].require(:for_all) == '1'
         all_people = current_user.people
-        all_people.each { |a| Buffer.create(category_id: Category.last.id + 1, person_id: a.id).save() }
+        all_people.each { |a| Buffer.create(category_id: Category.last.id, person_id: a.id).save }
       else
-        Buffer.create(category_id: Category.last.id, person_id: params.require(:format)).save()
+        Buffer.create(category_id: Category.last.id, person_id: params.require(:format)).save
       end
-      redirect_to categories_path(params.require(:format)) if @category.save()
+      redirect_to categories_path(params.require(:format))
     else
       redirect_to new_category_path(params.require(:format))
     end
+  rescue NoMethodError
+    redirect_to notfound_path
   end
 
   def statistics; end
 
   def grafik
     category_id = params[:category].require(:category_id).drop(1)
-    #hach with income
+    # hach with income
     data = {}
-    #hach with expenses
+    # hach with expenses
     data_expenses = {}
-    #names of categories
+    # names of categories
     @names = get_cat_names(category_id)
     # names of expenses that were used
-    @expenses_names=[]
+    @expenses_names = []
     category_id.each do |i|
       Category.find(i).expenses.each do |a|
         if Category.find(i).status
           @expenses_names.append(a.name)
           # create date like 11-2 where the first number is month and the  second number is day
           time = "#{a.time.month}-#{a.time.day}"
-          #filling  the hash with money
+          # filling  the hash with money
           if data[time].nil?
             data[time] = a.summ
           else
@@ -105,9 +108,9 @@ class CategoriesController < ApplicationController
     if name.present?
       if params[:category].require(:for_all) == '1'
         all_people = current_user.people
-        all_people.each { |a| Buffer.create(category_id:target_category_id, person_id: a.id).save() }
+        all_people.each { |a| Buffer.create(category_id: target_category_id, person_id: a.id).save }
       else
-        Buffer.create(category_id: target_category_id, person_id:@target_person_id).save()
+        Buffer.create(category_id: target_category_id, person_id: @target_person_id).save
       end
       status = if (status = '1')
                  true
@@ -125,10 +128,13 @@ class CategoriesController < ApplicationController
   def destroy
     target = Buffer.find_by(category_id: params.require(:format)).person_id
     redirect_to categories_path(target) if Category.find(params.require(:format)).destroy
+  rescue NoMethodError
+    redirect_to notfound_path
   end
+
   def get_cat_names(category_id)
-    names_expenses=[]
-    names_of_income=[]
+    names_expenses = []
+    names_of_income = []
     category_id.each do |i|
       if Category.find(i).status
         names_expenses.append(Category.find(i).name)
@@ -136,8 +142,11 @@ class CategoriesController < ApplicationController
         names_of_income.append(Category.find(i).name) unless Category.find(i).status
       end
     end
-    [names_expenses,names_of_income]
+    [names_expenses, names_of_income]
+  rescue NoMethodError
+    redirect_to notfound_path
   end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

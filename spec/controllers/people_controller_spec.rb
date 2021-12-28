@@ -8,6 +8,11 @@ describe PeopleController do
       post :create, params: { person: { name: 'Pavel' } }
       response.should redirect_to people_path
     end
+    it 'should not create' do
+      sign_in  FactoryGirl.create(:user)
+      post :create, params: { person: { name: '' } }
+      response.should redirect_to new_person_path
+    end
   end
   describe 'delete' do
     it 'delete person' do

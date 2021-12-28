@@ -16,6 +16,7 @@ Lint/UselessAssignment:
   Exclude:
     - 'app/controllers/categories_controller.rb'
     - 'spec/controllers/categories_controller_spec.rb'
+    - 'spec/controllers/expenses_controller_spec.rb'
 
 # Offense count: 9
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
@@ -31,7 +32,7 @@ Metrics/BlockLength:
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne.
 Metrics/ClassLength:
-  Max: 108
+  Max: 124
 
 # Offense count: 3
 # Configuration parameters: IgnoredMethods.
