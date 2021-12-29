@@ -105,6 +105,8 @@ class CategoriesController < ApplicationController
     @target_person_id = buffer.person_id
     target_category = Category.find(target_category_id)
     name = params[:category][:name]
+    all_buffer=Buffer.all.where(category_id: target_category_id)
+    all_buffer.each{|a| a.delete}
     if name.present?
       if params[:category].require(:for_all) == '1'
         all_people = current_user.people
