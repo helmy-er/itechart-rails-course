@@ -8,20 +8,25 @@ describe ExpensesController do
       category = FactoryGirl.create(:category)
       person = FactoryGirl.create(:person)
       buffer = FactoryGirl.create(:buffer, category_id: category.id, person_id: person.id)
-      get  :index, params: { people_id: category.id }
+      get :index, params: { people_id: category.id }
     end
   end
   describe 'create' do
     it 'create new expenses' do
+      expense = FactoryGirl.create(:expense)
+      category = FactoryGirl.create(:category)
       post :create,
-           params: { format: '4',
+           params: { format: category.id,
                      expense: { name: 'Pavel', text: 'test', summa: '122', date: '2021-12-03', status: 1 } }
-      response.should redirect_to(expenses_path('4'))
+      response.should redirect_to(expenses_path(category.id))
     end
     it 'not working create action' do
+      expense = FactoryGirl.create(:expense)
+      category = FactoryGirl.create(:category)
       post :create,
-           params: { format: '4', expense: { name: 'Pavel', text: '', summa: '', date: '2021-12-03', status: 1 } }
-      response.should redirect_to new_expense_path('4')
+           params: { format: category.id,
+                     expense: { name: 'Pavel', text: '', summa: '', date: '2021-12-03', status: 1 } }
+      response.should redirect_to new_expense_path(category.id)
     end
   end
   describe 'update' do
@@ -36,7 +41,7 @@ describe ExpensesController do
       expense = FactoryGirl.create(:expense)
       patch :update,
             params: { format: expense.id,
-                      expense: { name: 'Pavel', text: nil, summa: '122', date: '2021-12-03', status: 1 } }
+                      expense: { name: nil, text: nil, summa: '122', date: '2021-12-03', status: 1 } }
       response.should redirect_to(edit_expense_path(expense.id))
     end
   end

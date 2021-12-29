@@ -39,21 +39,17 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
-    if params[:category][:name].present?
-      status = params[:category].require(:status) == '1'
-      Category.new(name: params[:category].require(:name), status: status).save
-      if params[:category].require(:for_all) == '1'
-        all_people = current_user.people
-        all_people.each { |a| Buffer.create(category_id: Category.last.id, person_id: a.id).save }
-      else
-        Buffer.create(category_id: Category.last.id, person_id: params.require(:format)).save
-      end
-      redirect_to categories_path(params.require(:format))
+    status = params[:category].require(:status) == '1'
+    Category.new(name: params[:category].require(:name), status: status).save
+    if params[:category].require(:for_all) == '1'
+      all_people = current_user.people
+      all_people.each { |a| Buffer.create(category_id: Category.last.id, person_id: a.id).save }
     else
-      redirect_to new_category_path(params.require(:format))
+      Buffer.create(category_id: Category.last.id, person_id: params.require(:format)).save
     end
-  rescue NoMethodError
-    redirect_to notfound_path
+    redirect_to categories_path(params.require(:format))
+  rescue StandardError
+    redirect_to new_category_path(params.require(:format))
   end
 
   def statistics; end
@@ -104,26 +100,24 @@ class CategoriesController < ApplicationController
     buffer = Buffer.find_by(category_id: target_category_id)
     @target_person_id = buffer.person_id
     target_category = Category.find(target_category_id)
-    name = params[:category][:name]
-    all_buffer=Buffer.all.where(category_id: target_category_id)
-    all_buffer.each{|a| a.delete}
-    if name.present?
-      if params[:category].require(:for_all) == '1'
-        all_people = current_user.people
-        all_people.each { |a| Buffer.create(category_id: target_category_id, person_id: a.id).save }
-      else
-        Buffer.create(category_id: target_category_id, person_id: @target_person_id).save
-      end
-      status = if (status = '1')
-                 true
-               else
-                 false
-               end
-      target_category.update_attribute('name', name) && target_category.update_attribute('status', status)
-      redirect_to(categories_path(@target_person_id))
+    name = params[:category].require(:name)
+    all_buffer = Buffer.all.where(category_id: target_category_id)
+    all_buffer.each(&:delete)
+    if params[:category].require(:for_all) == '1'
+      all_people = current_user.people
+      all_people.each { |a| Buffer.create(category_id: target_category_id, person_id: a.id).save }
     else
-      redirect_to edit_category_path(target_category_id)
+      Buffer.create(category_id: target_category_id, person_id: @target_person_id).save
     end
+    status = if (status = '1')
+               true
+             else
+               false
+             end
+    target_category.update_attribute('name', name) && target_category.update_attribute('status', status)
+    redirect_to(categories_path(@target_person_id))
+  rescue StandardError
+    redirect_to edit_category_path(params.require(:format))
   end
 
   # DELETE /categories/1 or /categories/1.json
@@ -145,8 +139,6 @@ class CategoriesController < ApplicationController
       end
     end
     [names_expenses, names_of_income]
-  rescue NoMethodError
-    redirect_to notfound_path
   end
 
   private

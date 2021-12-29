@@ -26,9 +26,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="add page 404">
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="fix bug with cat. update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/people_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/people_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/controllers/expenses_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/expenses_controller_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/controllers/people_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/people_controller_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +69,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
-  <component name="RunManager" selected="RSpec.PeopleController create sho...">
-    <configuration name="CategoriesController create..." type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="RSpec.ExpensesController create">
+    <configuration name="ExpensesController create" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="itechart-rails-course" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -82,10 +87,10 @@
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/controllers/categories_controller_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/controllers/expenses_controller_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="CategoriesController create not working create action" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="ExpensesController create" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -96,7 +101,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="CategoriesController delete" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
+    <configuration name="ExpensesController update n..." type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="itechart-rails-course" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -113,10 +118,10 @@
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/controllers/categories_controller_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/controllers/expenses_controller_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="CategoriesController delete" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="ExpensesController update not working update action" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -158,7 +163,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="PeopleController" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
+    <configuration name="PeopleController update not..." type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="itechart-rails-course" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -178,7 +183,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/controllers/people_controller_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="PeopleController" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="PeopleController update not working update" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -287,11 +292,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="RSpec.ExpensesController create" />
+        <item itemvalue="RSpec.ExpensesController update n..." />
+        <item itemvalue="RSpec.PeopleController update not..." />
         <item itemvalue="RSpec.PeopleController create sho..." />
         <item itemvalue="Ruby.test" />
-        <item itemvalue="RSpec.PeopleController" />
-        <item itemvalue="RSpec.CategoriesController delete" />
-        <item itemvalue="RSpec.CategoriesController create..." />
       </list>
     </recent_temporary>
   </component>
@@ -327,7 +332,8 @@
       <workItem from="1640431931842" duration="2290000" />
       <workItem from="1640685831754" duration="6527000" />
       <workItem from="1640702013156" duration="6591000" />
-      <workItem from="1640777579715" duration="1500000" />
+      <workItem from="1640777579715" duration="2482000" />
+      <workItem from="1640786573649" duration="3585000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -385,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640710562711</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix bug with cat. update">
+      <created>1640781970355</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1640781970356</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,49 +438,50 @@
     <MESSAGE value="change people_index" />
     <MESSAGE value="fix all" />
     <MESSAGE value="add page 404" />
-    <option name="LAST_COMMIT_MESSAGE" value="add page 404" />
+    <MESSAGE value="fix bug with cat. update" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug with cat. update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640368324547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1640368324547" />
-    <state width="1323" height="334" key="GridCell.Tab.0.bottom" timestamp="1640713109786">
+    <state width="1323" height="334" key="GridCell.Tab.0.bottom" timestamp="1640792153209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640713109786" />
-    <state width="1323" height="334" key="GridCell.Tab.0.center" timestamp="1640713109786">
+    <state width="1323" height="334" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
+    <state width="1323" height="334" key="GridCell.Tab.0.center" timestamp="1640792153209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640713109786" />
-    <state width="1323" height="334" key="GridCell.Tab.0.left" timestamp="1640713109786">
+    <state width="1323" height="334" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
+    <state width="1323" height="334" key="GridCell.Tab.0.left" timestamp="1640792153208">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640713109786" />
-    <state width="1323" height="334" key="GridCell.Tab.0.right" timestamp="1640713109786">
+    <state width="1323" height="334" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640792153208" />
+    <state width="1323" height="334" key="GridCell.Tab.0.right" timestamp="1640792153209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640713109786" />
-    <state width="1323" height="334" key="GridCell.Tab.1.bottom" timestamp="1640713109786">
+    <state width="1323" height="334" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
+    <state width="1323" height="334" key="GridCell.Tab.1.bottom" timestamp="1640792153209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640713109786" />
-    <state width="1323" height="334" key="GridCell.Tab.1.center" timestamp="1640713109786">
+    <state width="1323" height="334" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
+    <state width="1323" height="334" key="GridCell.Tab.1.center" timestamp="1640792153209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1640713109786" />
-    <state width="1323" height="334" key="GridCell.Tab.1.left" timestamp="1640713109786">
+    <state width="1323" height="334" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
+    <state width="1323" height="334" key="GridCell.Tab.1.left" timestamp="1640792153209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1640713109786" />
-    <state width="1323" height="334" key="GridCell.Tab.1.right" timestamp="1640713109786">
+    <state width="1323" height="334" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
+    <state width="1323" height="334" key="GridCell.Tab.1.right" timestamp="1640792153209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1640713109786" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1640710601095">
+    <state width="1323" height="334" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1640781986976">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1640710601095" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1640781986976" />
     <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1640366569434">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -479,9 +493,12 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/itechart_rails_course@PeopleController_create_sho___.rcov" NAME="PeopleController create sho... Coverage Results" MODIFIED="1640710124702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
+    <SUITE FILE_PATH="coverage/itechart_rails_course@ExpensesController_update_n___.rcov" NAME="ExpensesController update n... Coverage Results" MODIFIED="1640792140692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
+    <SUITE FILE_PATH="coverage/itechart_rails_course@ExpensesController_create.rcov" NAME="ExpensesController create Coverage Results" MODIFIED="1640792271707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@PeopleController.rcov" NAME="PeopleController Coverage Results" MODIFIED="1640015071680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@CategoriesController_create___.rcov" NAME="CategoriesController create... Coverage Results" MODIFIED="1640015258934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@test.rcov" NAME="test Coverage Results" MODIFIED="1640702552040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
+    <SUITE FILE_PATH="coverage/itechart_rails_course@PeopleController_update_not___.rcov" NAME="PeopleController update not... Coverage Results" MODIFIED="1640792104219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@CategoriesController.rcov" NAME="CategoriesController Coverage Results" MODIFIED="1640015301520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
     <SUITE FILE_PATH="coverage/itechart_rails_course@CategoriesController_delete.rcov" NAME="CategoriesController delete Coverage Results" MODIFIED="1640015213794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
   </component>

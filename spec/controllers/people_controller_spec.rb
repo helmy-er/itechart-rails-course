@@ -30,7 +30,7 @@ describe PeopleController do
     it 'not working update' do
       person = FactoryGirl.create(:person)
       patch :update, params: { id: person.id, person: { name: '' } }
-      expect(response).to have_http_status(:unprocessable_entity)
+      response.should redirect_to edit_person_path(person.id)
     end
   end
 end

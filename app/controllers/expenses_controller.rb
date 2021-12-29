@@ -36,33 +36,25 @@ class ExpensesController < ApplicationController
   # POST /expenses or /expenses.json
   def create
     param = get_params_to_create
-    if param[0].present? && param[2].present? && param[4].present?
-      status = params[:expense].require(:status) == '1'
-      @expense = Expense.new(name: param[0], text:  param[1],
-                             time: param[4], category_id:  param[3], status: status, summ:  param[2])
-      redirect_to expenses_path(params.require(:format)) if @expense.save(validate: false)
-    else
-      redirect_to new_expense_path(params.require(:format))
-    end
+    status = params[:expense].require(:status) == '1'
+    @expense = Expense.new(name: param[0], text:  param[1],
+                           time: param[4], category_id:  param[3], status: status, summ:  param[2])
+    redirect_to expenses_path(params.require(:format)) if @expense.save
   end
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update
-    name = params[:expense][:name]
+    status = params[:expense].require(:status)
+    name = params[:expense].require(:name)
     text = params[:expense][:text]
-    status = params[:expense][:status]
-    summ = params[:expense][:summa]
-    time = params[:expense][:date]
-    if name.present? && text.present? && summ.present? && time.present?
-      status = status == '1'
-      @expense = Expense.find(params.require(:format))
-      @peoples_id = Expense.find(params.require(:format)).category_id
-      redirect_to expenses_path(@peoples_id) if update_atr(@expense, [text, status, summ, time])
-    else
-      redirect_to edit_expense_path(params.require(:format))
-    end
-  rescue NoMethodError
-    redirect_to notfound_path
+    summ = params[:expense].require(:summa)
+    time = params[:expense].require(:date)
+    status = status == '1'
+    @expense = Expense.find(params.require(:format))
+    @peoples_id = Expense.find(params.require(:format)).category_id
+    redirect_to expenses_path(@peoples_id) if update_atr(@expense, [name, text, status, summ, time])
+  rescue StandardError
+    redirect_to edit_expense_path(params.require(:format))
   end
 
   # DELETE /expenses/1 or /expenses/1.json
@@ -74,11 +66,13 @@ class ExpensesController < ApplicationController
 
   def get_params_to_create
     id = params.require(:format)
-    name = params[:expense][:name]
+    name = params[:expense].require(:name)
     text = params[:expense][:text]
-    sum = params[:expense][:summa]
-    time = params[:expense][:date]
+    sum = params[:expense].require(:summa)
+    time = params[:expense].require(:date)
     [name, text, sum, id, time]
+  rescue StandardError
+    redirect_to new_expense_path(id)
   end
 
   def update_atr(expense, atributes)
