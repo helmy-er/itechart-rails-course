@@ -56,9 +56,9 @@ class CategoriesController < ApplicationController
 
   def grafik
     category_id = params[:category].require(:category_id).drop(1)
-    # hach with income
+    # hash with income
     data = {}
-    # hach with expenses
+    # hash with expenses
     data_expenses = {}
     # names of categories
     @names = get_cat_names(category_id)
@@ -68,7 +68,7 @@ class CategoriesController < ApplicationController
       Category.find(i).expenses.each do |a|
         if Category.find(i).status
           @expenses_names.append(a.name)
-          # create date like 11-2 where the first number is month and the  second number is day
+          # create date like 11-2  month - day
           time = "#{a.time.month}-#{a.time.day}"
           # filling  the hash with money
           if data[time].nil?

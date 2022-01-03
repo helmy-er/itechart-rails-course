@@ -26,14 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="fix bug with cat. update">
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="fix some files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/people_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/people_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/expenses_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/expenses_controller_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/people_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/people_controller_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/expenses/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/expenses/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/bundle" beforeDir="false" afterPath="$PROJECT_DIR$/bin/bundle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -333,7 +330,8 @@
       <workItem from="1640685831754" duration="6527000" />
       <workItem from="1640702013156" duration="6591000" />
       <workItem from="1640777579715" duration="2482000" />
-      <workItem from="1640786573649" duration="3585000" />
+      <workItem from="1640786573649" duration="4363000" />
+      <workItem from="1641211776388" duration="877000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -398,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640781970356</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix some files">
+      <created>1640792429067</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1640792429067</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,49 +444,50 @@
     <MESSAGE value="fix all" />
     <MESSAGE value="add page 404" />
     <MESSAGE value="fix bug with cat. update" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug with cat. update" />
+    <MESSAGE value="fix some files" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640368324547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1640368324547" />
-    <state width="1323" height="334" key="GridCell.Tab.0.bottom" timestamp="1640792153209">
+    <state width="1323" height="334" key="GridCell.Tab.0.bottom" timestamp="1640793009772">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
-    <state width="1323" height="334" key="GridCell.Tab.0.center" timestamp="1640792153209">
+    <state width="1323" height="334" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
+    <state width="1323" height="334" key="GridCell.Tab.0.center" timestamp="1640793009772">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
-    <state width="1323" height="334" key="GridCell.Tab.0.left" timestamp="1640792153208">
+    <state width="1323" height="334" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
+    <state width="1323" height="334" key="GridCell.Tab.0.left" timestamp="1640793009772">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640792153208" />
-    <state width="1323" height="334" key="GridCell.Tab.0.right" timestamp="1640792153209">
+    <state width="1323" height="334" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
+    <state width="1323" height="334" key="GridCell.Tab.0.right" timestamp="1640793009772">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
-    <state width="1323" height="334" key="GridCell.Tab.1.bottom" timestamp="1640792153209">
+    <state width="1323" height="334" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
+    <state width="1323" height="334" key="GridCell.Tab.1.bottom" timestamp="1640793009772">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
-    <state width="1323" height="334" key="GridCell.Tab.1.center" timestamp="1640792153209">
+    <state width="1323" height="334" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
+    <state width="1323" height="334" key="GridCell.Tab.1.center" timestamp="1640793009772">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
-    <state width="1323" height="334" key="GridCell.Tab.1.left" timestamp="1640792153209">
+    <state width="1323" height="334" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
+    <state width="1323" height="334" key="GridCell.Tab.1.left" timestamp="1640793009772">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
-    <state width="1323" height="334" key="GridCell.Tab.1.right" timestamp="1640792153209">
+    <state width="1323" height="334" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
+    <state width="1323" height="334" key="GridCell.Tab.1.right" timestamp="1640793009772">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="334" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1640792153209" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1640781986976">
+    <state width="1323" height="334" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1640792443904">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1640781986976" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1640792443904" />
     <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1640366569434">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
