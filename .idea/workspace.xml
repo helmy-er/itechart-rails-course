@@ -26,15 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change rubocop">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.rubocop.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.rubocop.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/people_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/people_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Communication.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/PersonCategory.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/people_to_category.rb" beforeDir="false" />
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change rubocop config">
+      <change beforePath="$PROJECT_DIR$/app/views/categories/grafik.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/grafik.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,7 +330,7 @@
       <workItem from="1640786573649" duration="4363000" />
       <workItem from="1641211776388" duration="916000" />
       <workItem from="1641477318921" duration="2826000" />
-      <workItem from="1641484179481" duration="3139000" />
+      <workItem from="1641484179481" duration="3764000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -430,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641479596818</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="change rubocop config">
+      <created>1641487669161</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1641487669162</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,7 +473,8 @@
     <MESSAGE value="fix some files" />
     <MESSAGE value="change" />
     <MESSAGE value="change rubocop" />
-    <option name="LAST_COMMIT_MESSAGE" value="change rubocop" />
+    <MESSAGE value="change rubocop config" />
+    <option name="LAST_COMMIT_MESSAGE" value="change rubocop config" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640368324547">
@@ -512,10 +513,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="334" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1641212702544">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1641487693730">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641212702544" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641487693730" />
     <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1640366569434">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -20,22 +20,22 @@
 </center>
   <h5>Имена записей </h5>
 <div><ul>
-  <%for i in @expenses_names %>
-    <li><%= i %></li>
+  <%for name in @expenses_names %>
+    <li><%= name %></li>
     <% end %></ul>
 </div>
 <h5>Имена категорий расходов </h5>
  <div><ul>
-  <%for i in @names[0] %>
-    <li><%= i %></li>
+  <%for name in @names[0] %>
+    <li><%= name %></li>
   <% end %>
 </ul>
 </div>
 <h5>Имена категорий доходов </h5>
 <div>
   <ul>
-  <%for i in @names[1] %>
-      <li><%= i %></li>
+  <%for name in @names[1] %>
+      <li><%= name %></li>
   <% end %>
   </ul>
 </div>
@@ -83,17 +83,16 @@
     // заполняет дату расходов
     function setdata(date) {
         new_data=[]
-        for (let i in date) {
-            new_data.push(data[date[i]])
+        for (let days in date) {
+            new_data.push(data[date[days]])
         }
         return new_data
     }
     // заполняет дату прибыли
     function setdata1(date) {
-        console.log(date)
         new_data=[]
-        for (let i in date) {
-            new_data.push(data1[date[i]])
+        for (let days in date) {
+            new_data.push(data1[date[days]])
         }
         return new_data
     }
