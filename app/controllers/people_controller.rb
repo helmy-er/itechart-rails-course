@@ -6,10 +6,7 @@ class PeopleController < ApplicationController
   # GET /people or /people.json
   def index
     @people = current_user.people
-    if current_user.people.count.zero?
-      const_people = Person.create(name: 'ME', user_id: current_user.id)
-      const_people.save
-    end
+    Person.create(name: 'ME', user_id: current_user.id).save if current_user.people.count.zero?
   end
 
   # GET /people/1 or /people/1.json
@@ -42,7 +39,7 @@ class PeopleController < ApplicationController
   # PATCH/PUT /people/1 or /people/1.json
   def update
     respond_to do |format|
-      if @person.update_attribute('name', params[:person].require(:name))
+      if @person.update_attribute(:name, params[:person].require(:name))
         format.html { redirect_to people_path, notice: 'Person was successfully updated.' }
         format.json { render :show, status: :ok, location: @person }
       end

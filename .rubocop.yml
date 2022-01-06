@@ -8,14 +8,7 @@
 # Offense count: 1
 # Configuration parameters: AllowComments.
 
-# Offense count: 4
-Lint/UselessAssignment:
-  Exclude:
-    - 'spec/controllers/categories_controller_spec.rb'
-    - 'spec/controllers/expenses_controller_spec.rb'
 
-# Offense count: 9
-# Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
 Metrics/AbcSize:
   Max: 55
 
@@ -45,21 +38,13 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Max: 13
 
-# Offense count: 1
-
-# Offense count: 2
-# Configuration parameters: ExpectMatchingDefinition, CheckDefinitionPathHierarchy, CheckDefinitionPathHierarchyRoots, Regex, IgnoreExecutableScripts, AllowedAcronyms.
-# CheckDefinitionPathHierarchyRoots: lib, spec, test, src
-# AllowedAcronyms: CLI, DSL, ACL, API, ASCII, CPU, CSS, DNS, EOF, GUID, HTML, HTTP, HTTPS, ID, IP, JSON, LHS, QPS, RAM, RHS, RPC, SLA, SMTP, SQL, SSH, TCP, TLS, TTL, UDP, UI, UID, UUID, URI, URL, UTF8, VM, XML, XMPP, XSRF, XSS
-
 
 # Offense count: 35
 # Configuration parameters: AllowedConstants.
 Style/Documentation:
   Enabled: false
 
-# Offense count: 1
-# Configuration parameters: MinBodyLength.
-Style/GuardClause:
+Lint/UselessAssignment:
   Exclude:
-    - 'app/controllers/people_controller.rb'
+    - 'spec/controllers/categories_controller_spec.rb'
+    - 'spec/controllers/expenses_controller_spec.rb'

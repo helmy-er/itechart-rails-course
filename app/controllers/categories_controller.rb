@@ -97,8 +97,7 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
     target_category_id = params.require(:format)
-    buffer = Buffer.find_by(category_id: target_category_id)
-    @target_person_id = buffer.person_id
+    @target_person_id =  Buffer.find_by(category_id: target_category_id).person_id
     target_category = Category.find(target_category_id)
     name = params[:category].require(:name)
     Buffer.all.where(category_id: target_category_id).each(&:delete)
@@ -109,7 +108,7 @@ class CategoriesController < ApplicationController
       Buffer.create(category_id: target_category_id, person_id: @target_person_id).save
     end
     status = (status == '1')
-    target_category.update_attribute('name', name) && target_category.update_attribute('status', status)
+    target_category.update_attribute(:name, name) && target_category.update_attribute(:status, status)
     redirect_to(categories_path(@target_person_id))
   rescue StandardError
     redirect_to edit_category_path(params.require(:format))

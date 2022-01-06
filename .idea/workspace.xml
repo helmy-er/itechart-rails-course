@@ -26,17 +26,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change">
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change rubocop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.rubocop.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.rubocop.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/buffers_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/categories_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/expenses_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/people_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/persons_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/people_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/people_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Communication.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/PersonCategory.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/people_to_category.rb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,7 +336,8 @@
       <workItem from="1640777579715" duration="2482000" />
       <workItem from="1640786573649" duration="4363000" />
       <workItem from="1641211776388" duration="916000" />
-      <workItem from="1641477318921" duration="2194000" />
+      <workItem from="1641477318921" duration="2826000" />
+      <workItem from="1641484179481" duration="3139000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -424,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641479012899</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="change rubocop">
+      <created>1641479596818</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1641479596818</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,14 +466,14 @@
     <MESSAGE value="исправил баг с node modules" />
     <MESSAGE value="исправил баг с node modules 2" />
     <MESSAGE value="add button to check expenses with notes" />
-    <MESSAGE value="change rubocop" />
     <MESSAGE value="change people_index" />
     <MESSAGE value="fix all" />
     <MESSAGE value="add page 404" />
     <MESSAGE value="fix bug with cat. update" />
     <MESSAGE value="fix some files" />
     <MESSAGE value="change" />
-    <option name="LAST_COMMIT_MESSAGE" value="change" />
+    <MESSAGE value="change rubocop" />
+    <option name="LAST_COMMIT_MESSAGE" value="change rubocop" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640368324547">
