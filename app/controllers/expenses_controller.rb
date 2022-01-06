@@ -29,13 +29,13 @@ class ExpensesController < ApplicationController
     @note_expenses = []
     notes = target.expenses.all
     notes.each do |note|
-      @note_expenses.append(note) unless note.text.delete(' ').empty?
+      @note_expenses.append(note) unless note.text.strip.empty?
     end
   end
 
   # POST /expenses or /expenses.json
   def create
-    param = get_params_to_create
+    param = params_to_create
     status = params[:expense].require(:status) == '1'
     @expense = Expense.new(name: param[0], text:  param[1],
                            time: param[4], category_id:  param[3], status: status, summ:  param[2])
@@ -58,7 +58,7 @@ class ExpensesController < ApplicationController
     redirect_to expenses_path(@peoples_id) if @expense.destroy
   end
 
-  def get_params_to_create
+  def params_to_create
     id = params.require(:format)
     name = params[:expense].require(:name)
     text = params[:expense][:text]
@@ -75,10 +75,10 @@ class ExpensesController < ApplicationController
     time = params[:expense].require(:date)
     status = params[:expense].require(:status)
     text = params[:expense][:text]
-    status =  status == '1'
+    status = status == '1'
     expense.update_attribute(:name, name)
     expense.update_attribute(:text, text)
-    expense.update_attribute(:status,status)
+    expense.update_attribute(:status, status)
     expense.update_attribute(:summ, sum)
     expense.update_attribute(:time, time)
   end
