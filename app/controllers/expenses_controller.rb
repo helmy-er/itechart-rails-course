@@ -28,8 +28,8 @@ class ExpensesController < ApplicationController
     target = Category.find(params.require(:people_id))
     @note_expenses = []
     notes = target.expenses.all
-    notes.each do |a|
-      @note_expenses.append(a) unless a.text.delete(' ').empty?
+    notes.each do |note|
+      @note_expenses.append(note) unless note.text.delete(' ').empty?
     end
   end
 
@@ -44,15 +44,9 @@ class ExpensesController < ApplicationController
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update
-    status = params[:expense].require(:status)
-    name = params[:expense].require(:name)
-    text = params[:expense][:text]
-    summ = params[:expense].require(:summa)
-    time = params[:expense].require(:date)
-    status = status == '1'
     @expense = Expense.find(params.require(:format))
     @peoples_id = Expense.find(params.require(:format)).category_id
-    redirect_to expenses_path(@peoples_id) if update_atr(@expense, [name, text, status, summ, time])
+    redirect_to expenses_path(@peoples_id) if update_atr(@expense)
   rescue StandardError
     redirect_to edit_expense_path(params.require(:format))
   end
@@ -75,12 +69,17 @@ class ExpensesController < ApplicationController
     redirect_to new_expense_path(id)
   end
 
-  def update_atr(expense, atributes)
-    @expense = expense
-    @expense.update_attribute('name', atributes[0])
-    @expense.update_attribute('text', atributes[1])
-    @expense.update_attribute('status', atributes[2])
-    @expense.update_attribute('summ', atributes[3])
-    @expense.update_attribute('time', atributes[4])
+  def update_atr(expense)
+    name = params[:expense].require(:name)
+    sum = params[:expense].require(:summa)
+    time = params[:expense].require(:date)
+    status = params[:expense].require(:status)
+    text = params[:expense][:text]
+    status =  status == '1'
+    expense.update_attribute(:name, name)
+    expense.update_attribute(:text, text)
+    expense.update_attribute(:status,status)
+    expense.update_attribute(:summ, sum)
+    expense.update_attribute(:time, time)
   end
 end

@@ -101,19 +101,14 @@ class CategoriesController < ApplicationController
     @target_person_id = buffer.person_id
     target_category = Category.find(target_category_id)
     name = params[:category].require(:name)
-    all_buffer = Buffer.all.where(category_id: target_category_id)
-    all_buffer.each(&:delete)
+    Buffer.all.where(category_id: target_category_id).each(&:delete)
     if params[:category].require(:for_all) == '1'
       all_people = current_user.people
       all_people.each { |a| Buffer.create(category_id: target_category_id, person_id: a.id).save }
     else
       Buffer.create(category_id: target_category_id, person_id: @target_person_id).save
     end
-    status = if (status = '1')
-               true
-             else
-               false
-             end
+    status = (status == '1')
     target_category.update_attribute('name', name) && target_category.update_attribute('status', status)
     redirect_to(categories_path(@target_person_id))
   rescue StandardError
@@ -131,11 +126,11 @@ class CategoriesController < ApplicationController
   def get_cat_names(category_id)
     names_expenses = []
     names_of_income = []
-    category_id.each do |i|
-      if Category.find(i).status
-        names_expenses.append(Category.find(i).name)
+    category_id.each do |id|
+      if Category.find(id).status
+        names_expenses.append(Category.find(id).name)
       else
-        names_of_income.append(Category.find(i).name) unless Category.find(i).status
+        names_of_income.append(Category.find(id).name)
       end
     end
     [names_expenses, names_of_income]

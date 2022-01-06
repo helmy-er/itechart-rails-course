@@ -29,8 +29,7 @@
     <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="fix some files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/expenses/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/expenses/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bundle" beforeDir="false" afterPath="$PROJECT_DIR$/bin/bundle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,7 +330,8 @@
       <workItem from="1640702013156" duration="6591000" />
       <workItem from="1640777579715" duration="2482000" />
       <workItem from="1640786573649" duration="4363000" />
-      <workItem from="1641211776388" duration="877000" />
+      <workItem from="1641211776388" duration="916000" />
+      <workItem from="1641477318921" duration="1588000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -403,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640792429067</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix some files">
+      <created>1641212692906</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1641212692906</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,10 +491,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="334" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1640792443904">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1641212702544">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1640792443904" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641212702544" />
     <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1640366569434">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -496,6 +503,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1640686397094" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1641478443891">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1641478443891" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/itechart_rails_course@PeopleController_create_sho___.rcov" NAME="PeopleController create sho... Coverage Results" MODIFIED="1640710124702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="itechart-rails-course" />
