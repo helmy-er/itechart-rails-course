@@ -36,7 +36,7 @@ class ExpensesController < ApplicationController
   def create
     id = params.require(:format)
     data = params[:expense].require(%i[name summa date])
-    text = params[:expense][:text]
+    text = params.require(:expense)[:text]
     status = params[:expense].require(:status) == '1'
     @expense = Expense.new(name: data[0], text:  text,
                            time: data[2], category_id:  id, status: status, summ:  data[1])
@@ -63,7 +63,7 @@ class ExpensesController < ApplicationController
   def update_atr(expense)
     data = params[:expense].require(%i[name summa date])
     status = params[:expense].require(:status)
-    text = params[:expense][:text]
+    text = params.require(:expense)[:text]
     status = status == '1'
     expense.update_attribute(:name, data[0])
     expense.update_attribute(:text, text)
