@@ -40,7 +40,11 @@ class ExpensesController < ApplicationController
     status = params[:expense].require(:status) == '1'
     @expense = Expense.new(name: data[0], text:  text,
                            time: data[2], category_id:  id, status: status, summ:  data[1])
-    redirect_to expenses_path(params.require(:format)) if @expense.save
+    if @expense.save
+      redirect_to expenses_path(params.require(:format))
+    else
+      redirect_to new_expense_path(id)
+    end
   rescue StandardError
     redirect_to new_expense_path(id)
   end

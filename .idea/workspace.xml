@@ -26,9 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change views">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="fix update  action">
       <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -333,7 +331,7 @@
       <workItem from="1641211776388" duration="916000" />
       <workItem from="1641477318921" duration="2826000" />
       <workItem from="1641484179481" duration="3961000" />
-      <workItem from="1641548734095" duration="856000" />
+      <workItem from="1641548734095" duration="1015000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -440,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641488190793</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix update  action">
+      <created>1641549709794</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1641549709794</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +490,8 @@
     <MESSAGE value="change rubocop" />
     <MESSAGE value="change rubocop config" />
     <MESSAGE value="change views" />
-    <option name="LAST_COMMIT_MESSAGE" value="change views" />
+    <MESSAGE value="fix update  action" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix update  action" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640368324547">
