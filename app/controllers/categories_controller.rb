@@ -112,7 +112,7 @@ class CategoriesController < ApplicationController
       Buffer.create(category_id: target_category_id, person_id: @target_person_id).save
     end
     status = (status == '1')
-    target_category.update(name: name,status: status)
+    target_category.update(name: name, status: status)
     redirect_to(categories_path(@target_person_id))
   rescue StandardError
     redirect_to edit_category_path(params.require(:format))
@@ -137,14 +137,5 @@ class CategoriesController < ApplicationController
       end
     end
     [names_expenses, names_of_income]
-  end
-
-  private
-
-  # Use callbacks to share common setup or constraints between actions.
-
-  # Only allow a list of trusted parameters through.
-  def category_params
-    params.fetch(:category, {})
   end
 end

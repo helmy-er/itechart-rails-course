@@ -46,7 +46,7 @@ class PeopleController < ApplicationController
         edit_person_path(@person.id)
       end
     end
-  rescue
+  rescue StandardError
     redirect_to edit_person_path(@person.id)
   end
 

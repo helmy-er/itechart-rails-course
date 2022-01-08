@@ -69,6 +69,6 @@ class ExpensesController < ApplicationController
     status = params[:expense].require(:status)
     text = params.require(:expense)[:text]
     status = status == '1'
-    expense.update(name: data[0],status: status,text: text,time:data[2],summ: data[1])
-    end
+    expense.update(name: data[0], status: status, text: text, time: data[2], summ: data[1])
+  end
 end

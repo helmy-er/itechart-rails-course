@@ -26,11 +26,18 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="add rubocop">
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change update action">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/people_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/people_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/buffers/_buffer.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/buffers/_form.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/buffers/edit.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/buffers/index.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/buffers/index.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/buffers/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/buffers/show.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/buffers/show.json.jbuilder" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,7 +342,7 @@
       <workItem from="1641477318921" duration="2826000" />
       <workItem from="1641484179481" duration="3961000" />
       <workItem from="1641548734095" duration="1787000" />
-      <workItem from="1641650568127" duration="1884000" />
+      <workItem from="1641650568127" duration="2135000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -456,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641549856991</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="change update action">
+      <created>1641652498165</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1641652498165</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +517,8 @@
     <MESSAGE value="change views" />
     <MESSAGE value="fix update  action" />
     <MESSAGE value="add rubocop" />
-    <option name="LAST_COMMIT_MESSAGE" value="add rubocop" />
+    <MESSAGE value="change update action" />
+    <option name="LAST_COMMIT_MESSAGE" value="change update action" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640368324547">
