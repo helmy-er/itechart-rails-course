@@ -51,8 +51,8 @@ class ExpensesController < ApplicationController
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update
-    peoples_id = Expense.find(params.require(:format)).category_id
-    redirect_to expenses_path(peoples_id) if update_atr(Expense.find(params.require(:format)))
+    people_id = Expense.find(params.require(:format)).category_id
+    redirect_to expenses_path(people_id) if update_atr(Expense.find(params.require(:format)))
   rescue StandardError
     redirect_to edit_expense_path(params.require(:format))
   end
@@ -69,10 +69,6 @@ class ExpensesController < ApplicationController
     status = params[:expense].require(:status)
     text = params.require(:expense)[:text]
     status = status == '1'
-    expense.update_attribute(:name, data[0])
-    expense.update_attribute(:text, text)
-    expense.update_attribute(:status, status)
-    expense.update_attribute(:summ, data[1])
-    expense.update_attribute(:time, data[2])
-  end
+    expense.update(name: data[0],status: status,text: text,time:data[2],summ: data[1])
+    end
 end

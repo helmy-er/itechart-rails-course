@@ -26,8 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="fix update  action">
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="add rubocop">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/people_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/people_controller.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,7 +334,8 @@
       <workItem from="1641211776388" duration="916000" />
       <workItem from="1641477318921" duration="2826000" />
       <workItem from="1641484179481" duration="3961000" />
-      <workItem from="1641548734095" duration="1015000" />
+      <workItem from="1641548734095" duration="1787000" />
+      <workItem from="1641650568127" duration="1884000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -445,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641549709794</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add rubocop">
+      <created>1641549856991</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1641549856991</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +502,8 @@
     <MESSAGE value="change rubocop config" />
     <MESSAGE value="change views" />
     <MESSAGE value="fix update  action" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix update  action" />
+    <MESSAGE value="add rubocop" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rubocop" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1640368324547">
@@ -530,10 +542,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="334" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1640793009772" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1641488199602">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1641549877137">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641488199602" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641549877137" />
     <state x="540" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1640366569434">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

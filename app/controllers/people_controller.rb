@@ -42,9 +42,11 @@ class PeopleController < ApplicationController
       if @person.update_attribute(:name, params[:person].require(:name))
         format.html { redirect_to people_path, notice: 'Person was successfully updated.' }
         format.json { render :show, status: :ok, location: @person }
+      else
+        edit_person_path(@person.id)
       end
     end
-  rescue StandardError
+  rescue
     redirect_to edit_person_path(@person.id)
   end
 

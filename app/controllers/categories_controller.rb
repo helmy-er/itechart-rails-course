@@ -40,15 +40,15 @@ class CategoriesController < ApplicationController
   # POST /categories or /categories.json
   def create
     status = params[:category].require(:status) == '1'
-    category=Category.new(name: params[:category].require(:name), status: status)
+    category = Category.new(name: params[:category].require(:name), status: status)
     if category.save
-    if params[:category].require(:for_all) == '1'
-      all_people = current_user.people
-      all_people.each { |a| Buffer.create(category_id: Category.last.id, person_id: a.id).save }
-    else
-      Buffer.create(category_id: Category.last.id, person_id: params.require(:format)).save
-    end
-    redirect_to categories_path(params.require(:format))
+      if params[:category].require(:for_all) == '1'
+        all_people = current_user.people
+        all_people.each { |a| Buffer.create(category_id: Category.last.id, person_id: a.id).save }
+      else
+        Buffer.create(category_id: Category.last.id, person_id: params.require(:format)).save
+      end
+      redirect_to categories_path(params.require(:format))
     else
       redirect_to new_category_path(params.require(:format))
     end
@@ -112,7 +112,7 @@ class CategoriesController < ApplicationController
       Buffer.create(category_id: target_category_id, person_id: @target_person_id).save
     end
     status = (status == '1')
-    target_category.update_attribute(:name, name) && target_category.update_attribute(:status, status)
+    target_category.update(name: name,status: status)
     redirect_to(categories_path(@target_person_id))
   rescue StandardError
     redirect_to edit_category_path(params.require(:format))
