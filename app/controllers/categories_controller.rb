@@ -43,8 +43,7 @@ class CategoriesController < ApplicationController
     category = Category.new(name: params[:category].require(:name), status: status)
     if category.save
       if params[:category].require(:for_all) == '1'
-        all_people = current_user.people
-        all_people.each { |a| Buffer.create(category_id: Category.last.id, person_id: a.id).save }
+        current_user.people.each { |person| Buffer.create(category_id: Category.last.id, person_id: person.id).save }
       else
         Buffer.create(category_id: Category.last.id, person_id: params.require(:format)).save
       end
@@ -68,27 +67,27 @@ class CategoriesController < ApplicationController
     @names = get_cat_names(category_id)
     # names of expenses that were used
     @expenses_names = []
-    category_id.each do |i|
-      Category.find(i).expenses.each do |a|
-        if Category.find(i).status
-          @expenses_names.append(a.name)
+    category_id.each do |id|
+      Category.find(id).expenses.each do |expense|
+        if Category.find(id).status
+          @expenses_names.append(expense.name)
           # create date like 11-2  month - day
-          time = "#{a.time.month}-#{a.time.day}"
+          time = "#{expense.time.month}-#{expense.time.day}"
           # filling  the hash with money
           if data[time].nil?
-            data[time] = a.summ
+            data[time] = expense.summ
           else
             # if there is money on the checked   day, they add up
-            data[time] += a.summ
+            data[time] += expense.summ
           end
         else
-          unless Category.find(i).status
-            @expenses_names.append(a.name)
-            time = "#{a.time.month}-#{a.time.day}"
+          unless Category.find(id).status
+            @expenses_names.append(expense.name)
+            time = "#{expense.time.month}-#{expense.time.day}"
             if data_expenses[time].nil?
-              data_expenses[time] = a.summ
+              data_expenses[time] = expense.summ
             else
-              data_expenses[time] += a.summ
+              data_expenses[time] += expense.summ
             end
           end
         end
@@ -102,17 +101,16 @@ class CategoriesController < ApplicationController
   def update
     target_category_id = params.require(:format)
     @target_person_id =  Buffer.find_by(category_id: target_category_id).person_id
-    target_category = Category.find(target_category_id)
     name = params[:category].require(:name)
     Buffer.all.where(category_id: target_category_id).each(&:delete)
     if params[:category].require(:for_all) == '1'
       all_people = current_user.people
-      all_people.each { |a| Buffer.create(category_id: target_category_id, person_id: a.id).save }
+      all_people.each { |person| Buffer.create(category_id: target_category_id, person_id: person.id).save }
     else
       Buffer.create(category_id: target_category_id, person_id: @target_person_id).save
     end
     status = (status == '1')
-    target_category.update(name: name, status: status)
+    Category.find(target_category_id).update(name: name, status: status)
     redirect_to(categories_path(@target_person_id))
   rescue StandardError
     redirect_to edit_category_path(params.require(:format))
@@ -121,6 +119,7 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1 or /categories/1.json
   def destroy
     target = Buffer.find_by(category_id: params.require(:format)).person_id
+    Buffer.all.where(category_id: params.require(:format)).each(&:delete)
     redirect_to categories_path(target) if Category.find(params.require(:format)).destroy
   rescue NoMethodError
     redirect_to notfound_path

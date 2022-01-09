@@ -51,8 +51,8 @@ class ExpensesController < ApplicationController
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update
-    people_id = Expense.find(params.require(:format)).category_id
-    redirect_to expenses_path(people_id) if update_atr(Expense.find(params.require(:format)))
+    cat_id = Expense.find(params.require(:format)).category_id
+    redirect_to expenses_path(cat_id) if update_atr(Expense.find(params.require(:format)))
   rescue StandardError
     redirect_to edit_expense_path(params.require(:format))
   end
@@ -60,8 +60,8 @@ class ExpensesController < ApplicationController
   # DELETE /expenses/1 or /expenses/1.json
   def destroy
     expense = Expense.find(params.require(:format))
-    peoples_id = Expense.find(params.require(:format)).category_id
-    redirect_to expenses_path(peoples_id) if expense.destroy
+    cat_id = Expense.find(params.require(:format)).category_id
+    redirect_to expenses_path(cat_id) if expense.destroy
   end
 
   def update_atr(expense)
