@@ -3,8 +3,7 @@
 class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   unless config.consider_all_requests_local
-    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-    rescue_from NoMethodError, with: :render_not_found
+    rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :render_not_found
   end
   def index
     if Person.find(params.require(:people_id)).categories.count.zero?
@@ -114,14 +113,13 @@ class CategoriesController < ApplicationController
     names_of_records = []
     category_id.each do |id|
       category = Category.find(id)
-      if category.status == false
+      if !category.status
         names_of_income.append(category.name)
       else
         names_expenses.append(category.name)
       end
       category.expenses.each { |expense| names_of_records.append(expense.name) }
     end
-
     [names_expenses, names_of_income, names_of_records]
   end
 

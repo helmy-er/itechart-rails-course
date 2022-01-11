@@ -2,8 +2,7 @@
 
 class ExpensesController < ApplicationController
   unless config.consider_all_requests_local
-    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-    rescue_from NoMethodError, with: :render_not_found
+    rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :render_not_found
   end
   def index
     target = Category.find(params.require(:people_id))
@@ -46,7 +45,9 @@ class ExpensesController < ApplicationController
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update
     expense = Expense.find(params.require(:format))
-    if update_atr(expense)
+    status = exp_prms[:status] == '1'
+    if expense.update(name: exp_prms[:name], status: status,
+                      text: exp_prms[:text], time: exp_prms[:date], summ: exp_prms[:summa])
       redirect_to expenses_path(expense.category_id)
     else
       redirect_to edit_expense_path(params.require(:format))
@@ -57,12 +58,6 @@ class ExpensesController < ApplicationController
   def destroy
     expense = Expense.find(params.require(:format))
     redirect_to expenses_path(expense.category_id) if expense.destroy
-  end
-
-  def update_atr(expense)
-    status = exp_prms[:status] == '1'
-    expense.update(name: exp_prms[:name], status: status,
-                   text: exp_prms[:text], time: exp_prms[:date], summ: exp_prms[:summa])
   end
 
   private
