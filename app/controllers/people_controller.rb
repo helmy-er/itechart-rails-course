@@ -2,8 +2,6 @@
 
 class PeopleController < ApplicationController
   before_action :set_person, only: %i[show edit update destroy]
-  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found unless config.consider_all_requests_local
-
   # GET /people or /people.json
   def index
     @people = current_user.people
@@ -23,8 +21,7 @@ class PeopleController < ApplicationController
 
   # POST /people or /people.json
   def create
-    data = person_params
-    @person = Person.create(name: data[:name], user_id: data[:user_id])
+    @person = Person.create(name: person_params[:name], user_id: person_params[:user_id])
     respond_to do |format|
       if @person.save
         format.html { redirect_to people_path, notice: 'Person was successfully created.' }
@@ -38,8 +35,7 @@ class PeopleController < ApplicationController
 
   # PATCH/PUT /people/1 or /people/1.json
   def update
-    data = person_params
-    if @person.update(name: data[:name])
+    if @person.update(name: person_params[:name])
       redirect_to people_path
     else
       redirect_to edit_person_path(@person.id)
@@ -54,6 +50,7 @@ class PeopleController < ApplicationController
       format.json { head :no_content }
     end
   end
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found unless config.consider_all_requests_local
 
   private
 

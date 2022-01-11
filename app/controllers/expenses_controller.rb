@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 class ExpensesController < ApplicationController
-  unless config.consider_all_requests_local
-    rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :render_not_found
-  end
   def index
     target = Category.find(params.require(:people_id))
     @expenses = target.expenses.all
@@ -58,6 +55,9 @@ class ExpensesController < ApplicationController
   def destroy
     expense = Expense.find(params.require(:format))
     redirect_to expenses_path(expense.category_id) if expense.destroy
+  end
+  unless config.consider_all_requests_local
+    rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :render_not_found
   end
 
   private

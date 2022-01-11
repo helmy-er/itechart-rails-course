@@ -2,16 +2,15 @@
 
 class CategoriesController < ApplicationController
   # GET /categories or /categories.json
-  unless config.consider_all_requests_local
-    rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :render_not_found
-  end
+
   def index
-    if Person.find(params.require(:people_id)).categories.count.zero?
+    people_id = params.require(:people_id)
+    if Person.find(people_id).categories.count.zero?
       first_category = Category.new(name: 'expenses', status: false)
       first_category.save
-      Buffer.create(category_id: first_category.id, person_id: params.require(:people_id)).save
+      Buffer.create(category_id: first_category.id, person_id: people_id).save
     end
-    @categories = Person.find(params.require(:people_id)).categories.all
+    @categories = Person.find(people_id).categories.all
   end
 
   def days_in_month(month, year = Time.now.year)
@@ -121,6 +120,9 @@ class CategoriesController < ApplicationController
       category.expenses.each { |expense| names_of_records.append(expense.name) }
     end
     [names_expenses, names_of_income, names_of_records]
+  end
+  unless config.consider_all_requests_local
+    rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :render_not_found
   end
 
   private

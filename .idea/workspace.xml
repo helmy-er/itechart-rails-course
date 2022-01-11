@@ -25,10 +25,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change resque">
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="add rubocop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/people_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/people_controller.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,7 +344,8 @@
       <workItem from="1641650568127" duration="2823000" />
       <workItem from="1641729174719" duration="956000" />
       <workItem from="1641833839995" duration="6442000" />
-      <workItem from="1641888294785" duration="8454000" />
+      <workItem from="1641888294785" duration="9519000" />
+      <workItem from="1641933775066" duration="569000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -492,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641896811132</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="add rubocop">
+      <created>1641897543075</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1641897543075</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,10 +548,10 @@
     <MESSAGE value="change views" />
     <MESSAGE value="fix update  action" />
     <MESSAGE value="change update action" />
-    <MESSAGE value="add rubocop" />
     <MESSAGE value="fix var names" />
     <MESSAGE value="change resque" />
-    <option name="LAST_COMMIT_MESSAGE" value="change resque" />
+    <MESSAGE value="add rubocop" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rubocop" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1641891226816">
@@ -553,42 +562,42 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1640368324547" />
-    <state width="1323" height="265" key="GridCell.Tab.0.bottom" timestamp="1641896689323">
+    <state width="1323" height="265" key="GridCell.Tab.0.bottom" timestamp="1641899985100">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1641896689323" />
-    <state width="1323" height="265" key="GridCell.Tab.0.center" timestamp="1641896689322">
+    <state width="1323" height="265" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1641899985100" />
+    <state width="1323" height="265" key="GridCell.Tab.0.center" timestamp="1641899985100">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1641896689322" />
-    <state width="1323" height="265" key="GridCell.Tab.0.left" timestamp="1641896689322">
+    <state width="1323" height="265" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1641899985100" />
+    <state width="1323" height="265" key="GridCell.Tab.0.left" timestamp="1641899985100">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1641896689322" />
-    <state width="1323" height="265" key="GridCell.Tab.0.right" timestamp="1641896689322">
+    <state width="1323" height="265" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1641899985100" />
+    <state width="1323" height="265" key="GridCell.Tab.0.right" timestamp="1641899985100">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1641896689322" />
-    <state width="1323" height="265" key="GridCell.Tab.1.bottom" timestamp="1641896689323">
+    <state width="1323" height="265" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1641899985100" />
+    <state width="1323" height="265" key="GridCell.Tab.1.bottom" timestamp="1641899985101">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1641896689323" />
-    <state width="1323" height="265" key="GridCell.Tab.1.center" timestamp="1641896689323">
+    <state width="1323" height="265" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1641899985101" />
+    <state width="1323" height="265" key="GridCell.Tab.1.center" timestamp="1641899985100">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1641896689323" />
-    <state width="1323" height="265" key="GridCell.Tab.1.left" timestamp="1641896689323">
+    <state width="1323" height="265" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1641899985100" />
+    <state width="1323" height="265" key="GridCell.Tab.1.left" timestamp="1641899985100">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1641896689323" />
-    <state width="1323" height="265" key="GridCell.Tab.1.right" timestamp="1641896689323">
+    <state width="1323" height="265" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1641899985100" />
+    <state width="1323" height="265" key="GridCell.Tab.1.right" timestamp="1641899985101">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="265" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1641896689323" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1641730142606">
+    <state width="1323" height="265" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1641899985101" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1641897553201">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641730142606" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641897553201" />
     <state x="289" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1641890941920">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
