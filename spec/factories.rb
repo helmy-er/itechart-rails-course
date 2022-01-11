@@ -7,6 +7,8 @@ FactoryGirl.define do
   end
   factory :expense do
     name 'Jhon'
+    summ '12'
+    time '30.12.21'
     association(:category)
   end
   factory :person do

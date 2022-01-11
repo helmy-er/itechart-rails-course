@@ -2,6 +2,7 @@
 
 class PeopleController < ApplicationController
   before_action :set_person, only: %i[show edit update destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found unless config.consider_all_requests_local
 
   # GET /people or /people.json
   def index
@@ -22,7 +23,8 @@ class PeopleController < ApplicationController
 
   # POST /people or /people.json
   def create
-    @person = Person.create(name: params[:person].require(:name), user_id: current_user.id)
+    data = person_params
+    @person = Person.create(name: data[:name], user_id: data[:user_id])
     respond_to do |format|
       if @person.save
         format.html { redirect_to people_path, notice: 'Person was successfully created.' }
@@ -32,22 +34,16 @@ class PeopleController < ApplicationController
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
     end
-  rescue StandardError
-    redirect_to new_person_path
   end
 
   # PATCH/PUT /people/1 or /people/1.json
   def update
-    respond_to do |format|
-      if @person.update_attribute(:name, params[:person].require(:name))
-        format.html { redirect_to people_path, notice: 'Person was successfully updated.' }
-        format.json { render :show, status: :ok, location: @person }
-      else
-        edit_person_path(@person.id)
-      end
+    data = person_params
+    if @person.update(name: data[:name])
+      redirect_to people_path
+    else
+      redirect_to edit_person_path(@person.id)
     end
-  rescue StandardError
-    redirect_to edit_person_path(@person.id)
   end
 
   # DELETE /people/1 or /people/1.json
@@ -64,5 +60,15 @@ class PeopleController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_person
     @person = Person.find(params[:id])
+  end
+
+  def render_not_found(_exception)
+    redirect_to notfound_path
+  end
+
+  def person_params
+    data = params.require(:person).permit(:name)
+    user_id = current_user.id
+    { name: data[:name], user_id: user_id }
   end
 end

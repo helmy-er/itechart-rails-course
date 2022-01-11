@@ -4,4 +4,5 @@ class Person < ApplicationRecord
   belongs_to :user
   has_many :buffers
   has_many :categories, through: :buffers
+  validates :name, presence: true
 end

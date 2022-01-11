@@ -11,7 +11,7 @@ describe PeopleController do
     it 'should not create' do
       sign_in  FactoryGirl.create(:user)
       post :create, params: { person: { name: '' } }
-      response.should redirect_to new_person_path
+      expect(response).to have_http_status(422)
     end
   end
   describe 'delete' do
@@ -23,11 +23,13 @@ describe PeopleController do
   end
   describe 'update' do
     it 'update person' do
+      sign_in  FactoryGirl.create(:user)
       person = FactoryGirl.create(:person)
       patch :update, params: { id: person.id, person: { name: 'Pavel' } }
       response.should redirect_to people_path
     end
     it 'not working update' do
+      sign_in  FactoryGirl.create(:user)
       person = FactoryGirl.create(:person)
       patch :update, params: { id: person.id, person: { name: '' } }
       response.should redirect_to edit_person_path(person.id)
