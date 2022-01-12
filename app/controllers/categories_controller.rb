@@ -2,11 +2,11 @@
 
 class CategoriesController < ApplicationController
   # GET /categories or /categories.json
-
+  before_action :set_category, only: %i[edit update]
   def index
     people_id = params.require(:people_id)
     if Person.find(people_id).categories.count.zero?
-      first_category = Category.new(name: 'expenses', status: false)
+      first_category = Category.new(name: 'expenses', status: false, for_all: false)
       first_category.save
       Buffer.create(category_id: first_category.id, person_id: people_id).save
     end
@@ -17,10 +17,7 @@ class CategoriesController < ApplicationController
   def show; end
 
   # GET /categories/new
-  def new
-    @people_id = current_user.people.all
-    @category = Category.new
-  end
+  def new; end
 
   # GET /categories/1/edit
   def edit
@@ -33,9 +30,10 @@ class CategoriesController < ApplicationController
   def create
     id = params.require(:format)
     status = cat_params[:status] == '1'
-    category = Category.new(name: cat_params[:name], status: status)
+    for_all = cat_params[:for_all] == '1'
+    category = Category.new(name: cat_params[:name], status: status, for_all: for_all)
     if category.save
-      if cat_params[:for_all] == '1'
+      if for_all
         current_user.people.each { |person| Buffer.create(category_id: category.id, person_id: person.id).save }
       else
         Buffer.create(category_id: category.id, person_id: id).save
@@ -75,10 +73,11 @@ class CategoriesController < ApplicationController
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
-    id = params.require(:format)
+    id = @category.id
     status = cat_params[:status] == '1'
+    for_all = cat_params[:for_all] == '1'
     @target_person_id = Buffer.find_by(category_id: id).person_id
-    if Category.find(id).update(name: cat_params[:name], status: status)
+    if Category.find(id).update(name: cat_params[:name], status: status, for_all: for_all)
       Buffer.where(category_id: id).each(&:delete)
       if cat_params[:for_all] == '1'
         all_people = current_user.people
@@ -116,6 +115,10 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+  def set_category
+    @category = Category.find(params.require(:format))
+  end
 
   def days_in_month(month, year = Time.now.year)
     days_in_month = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]

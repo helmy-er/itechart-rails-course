@@ -5,4 +5,6 @@ class Expense < ApplicationRecord
   validates :name, presence: true
   validates :time, presence: true
   validates :summ, presence: true
+  validates :name, length: { maximum: 40 }
+  validates_date :time, on_or_before: :today, type: :date
 end

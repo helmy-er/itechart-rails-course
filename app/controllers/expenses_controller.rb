@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ExpensesController < ApplicationController
+  before_action :set_expense, only: %i[edit update]
   def index
     target = Category.find(params.require(:people_id))
     @expenses = target.expenses.all
@@ -28,20 +29,21 @@ class ExpensesController < ApplicationController
 
   # POST /expenses or /expenses.json
   def create
+    time = exp_prms[:time].gsub('-', '.')
     id = params.require(:format)
     status = exp_prms[:status] == '1'
     @expense = Expense.new(name: exp_prms[:name], text: exp_prms[:text],
-                           time: exp_prms[:date], category_id: id, status: status, summ: exp_prms[:summa])
+                           time: time, category_id: id, status: status, summ: exp_prms[:summ])
     redirect_to @expense.save ? expenses_path(id) : new_expense_path(id)
   end
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update
-    expense = Expense.find(params.require(:format))
+    time = exp_prms[:time].gsub('-', '.')
     status = exp_prms[:status] == '1'
-    if expense.update(name: exp_prms[:name], status: status,
-                      text: exp_prms[:text], time: exp_prms[:date], summ: exp_prms[:summa])
-      redirect_to expenses_path(expense.category_id)
+    if @expense.update(name: exp_prms[:name], status: status,
+                       text: exp_prms[:text], time: time, summ: exp_prms[:summ])
+      redirect_to expenses_path(@expense.category_id)
     else
       redirect_to edit_expense_path(params.require(:format))
     end
@@ -55,11 +57,15 @@ class ExpensesController < ApplicationController
 
   private
 
+  def set_expense
+    @expense = Expense.find(params.require(:format))
+  end
+
   def render_not_found(_exception)
     redirect_to notfound_path
   end
 
   def exp_prms
-    params.require(:expense).permit(:name, :summa, :date, :text, :status)
+    params.require(:expense).permit(:name, :summ, :time, :text, :status)
   end
 end

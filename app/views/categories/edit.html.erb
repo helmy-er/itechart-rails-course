@@ -1,7 +1,7 @@
 <h1>Editing Category</h1>
 
 <% cat_id=params.require(:format) %>
-<%= form_with scope: :category, url: category_path(cat_id),method: :PATCH do |form| %>
+<%= form_with(model: @category, url: category_path(cat_id)) do |form|%>
   <%= form.label :имя %>
   <%= form.text_field :name %>
   <p>

@@ -5,4 +5,5 @@ class Category < ApplicationRecord
   has_many :people, through: :buffers
   has_many :expenses
   validates :name, presence: true
+  validates :name, length: { maximum: 10 }
 end

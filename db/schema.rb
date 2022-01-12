@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_211_229_150_059) do
+ActiveRecord::Schema.define(version: 20_220_112_142_627) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20_211_229_150_059) do
   create_table 'categories', force: :cascade do |t|
     t.string 'name'
     t.boolean 'status'
+    t.boolean 'for_all'
   end
 
   create_table 'expenses', force: :cascade do |t|

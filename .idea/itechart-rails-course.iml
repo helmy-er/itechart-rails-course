@@ -28,6 +28,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="moment.js" level="application" />
+    <orderEntry type="library" name="twix.js" level="application" />
+    <orderEntry type="library" name="chart.js" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actioncable (v6.1.4.1, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v6.1.4.1, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v6.1.4.1, ruby-2.6.9-p207) [gem]" level="application" />
@@ -116,11 +119,13 @@
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.4.2, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.1.0, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.10, ruby-2.6.9-p207) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="timeliness (v0.4.4, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v5.2.1, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks-source (v5.2.0, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.4, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo-data (v1.2021.5, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v2.1.0, ruby-2.6.9-p207) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="validates_timeliness (v5.0.0, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.0, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webdrivers (v5.0.0, ruby-2.6.9-p207) [gem]" level="application" />
@@ -129,9 +134,6 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, ruby-2.6.9-p207) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.5.1, ruby-2.6.9-p207) [gem]" level="application" />
-    <orderEntry type="library" name="moment.js" level="application" />
-    <orderEntry type="library" name="twix.js" level="application" />
-    <orderEntry type="library" name="chart.js" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

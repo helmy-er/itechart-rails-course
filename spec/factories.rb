@@ -16,7 +16,7 @@ FactoryGirl.define do
     association(:user)
   end
   factory :category do
-    name 'first_category'
+    name 'category'
   end
   factory :buffer do
     person_id 1

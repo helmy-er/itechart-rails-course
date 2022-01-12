@@ -1,15 +1,15 @@
 <h1>Editing Expense</h1>
 
 <% expense=params.require(:format) %>
-<%= form_with scope: :expense, url: expense_path(expense), method: :patch do |form| %>
+  <%= form_with(model: @expense, url: expense_path(expense)) do |form|%>
   <%= form.label :тема %>
   <%= form.text_field :name %>
   <%= form.label :заметка %>
   <%= form.text_field :text %>
   <%= form.label :'кол-во денег' %>
-  <%= form.text_field :summa %>
+  <%= form.text_field :summ %>
   <%= form.label :дата %>
-  <%= form.date_field :date %>
+  <%= form.date_field :time %>
   <br>
   <%= form.check_box :status %>
   <br>

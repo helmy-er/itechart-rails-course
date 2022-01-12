@@ -2,6 +2,16 @@
 
 require 'rails_helper'
 describe PeopleController do
+  describe 'index' do
+    it 'should find people' do
+      sign_in  FactoryGirl.create(:user)
+      get :index
+    end
+    it 'not working index' do
+      get :index
+      response.should redirect_to notfound_path
+    end
+  end
   describe 'create' do
     it 'should create' do
       sign_in  FactoryGirl.create(:user)

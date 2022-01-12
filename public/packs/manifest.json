@@ -9,6 +9,16 @@
       "js.map": [
         "/packs/js/application-e421b4aa3f716bebdab1.js.map"
       ]
+    },
+    "grafik": {
+      "js": [
+        "/packs/js/grafik-bf79ba6d9031aa7ddc61.js"
+      ],
+      "js.map": [
+        "/packs/js/grafik-bf79ba6d9031aa7ddc61.js.map"
+      ]
     }
-  }
+  },
+  "grafik.js": "/packs/js/grafik-bf79ba6d9031aa7ddc61.js",
+  "grafik.js.map": "/packs/js/grafik-bf79ba6d9031aa7ddc61.js.map"
 }

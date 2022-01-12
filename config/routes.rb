@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :buffers
   devise_for :users
   root 'pages#home'
   get 'persons/profile'
