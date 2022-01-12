@@ -25,8 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="add rubocop">
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change resque">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/people_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/people_controller.rb" afterDir="false" />
@@ -345,7 +346,9 @@
       <workItem from="1641729174719" duration="956000" />
       <workItem from="1641833839995" duration="6442000" />
       <workItem from="1641888294785" duration="9519000" />
-      <workItem from="1641933775066" duration="569000" />
+      <workItem from="1641933775066" duration="704000" />
+      <workItem from="1641967628938" duration="1073000" />
+      <workItem from="1641982832439" duration="207000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -501,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641897543075</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="change resque">
+      <created>1641934453558</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1641934453558</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,9 +559,9 @@
     <MESSAGE value="fix update  action" />
     <MESSAGE value="change update action" />
     <MESSAGE value="fix var names" />
-    <MESSAGE value="change resque" />
     <MESSAGE value="add rubocop" />
-    <option name="LAST_COMMIT_MESSAGE" value="add rubocop" />
+    <MESSAGE value="change resque" />
+    <option name="LAST_COMMIT_MESSAGE" value="change resque" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1641891226816">
@@ -594,10 +604,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="265" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1641899985101" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1641897553201">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1641934462705">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641897553201" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641934462705" />
     <state x="289" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1641890941920">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -35,11 +35,7 @@ class PeopleController < ApplicationController
 
   # PATCH/PUT /people/1 or /people/1.json
   def update
-    if @person.update(name: person_params[:name])
-      redirect_to people_path
-    else
-      redirect_to edit_person_path(@person.id)
-    end
+    redirect_to @person.update(name: person_params[:name]) ? people_path : edit_person_path(@person.id)
   end
 
   # DELETE /people/1 or /people/1.json
@@ -50,7 +46,6 @@ class PeopleController < ApplicationController
       format.json { head :no_content }
     end
   end
-  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found unless config.consider_all_requests_local
 
   private
 

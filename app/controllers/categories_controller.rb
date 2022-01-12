@@ -13,13 +13,6 @@ class CategoriesController < ApplicationController
     @categories = Person.find(people_id).categories.all
   end
 
-  def days_in_month(month, year = Time.now.year)
-    days_in_month = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    return 29 if month == 2 && Date.gregorian_leap?(year)
-
-    days_in_month[month]
-  end
-
   # GET /categories/1 or /categories/1.json
   def show; end
 
@@ -121,11 +114,15 @@ class CategoriesController < ApplicationController
     end
     [names_expenses, names_of_income, names_of_records]
   end
-  unless config.consider_all_requests_local
-    rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :render_not_found
-  end
 
   private
+
+  def days_in_month(month, year = Time.now.year)
+    days_in_month = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    return 29 if month == 2 && Date.gregorian_leap?(year)
+
+    days_in_month[month]
+  end
 
   def render_not_found(_exception)
     redirect_to notfound_path

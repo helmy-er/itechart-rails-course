@@ -32,11 +32,7 @@ class ExpensesController < ApplicationController
     status = exp_prms[:status] == '1'
     @expense = Expense.new(name: exp_prms[:name], text: exp_prms[:text],
                            time: exp_prms[:date], category_id: id, status: status, summ: exp_prms[:summa])
-    if @expense.save
-      redirect_to expenses_path(id)
-    else
-      redirect_to new_expense_path(id)
-    end
+    redirect_to @expense.save ? expenses_path(id) : new_expense_path(id)
   end
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
@@ -55,9 +51,6 @@ class ExpensesController < ApplicationController
   def destroy
     expense = Expense.find(params.require(:format))
     redirect_to expenses_path(expense.category_id) if expense.destroy
-  end
-  unless config.consider_all_requests_local
-    rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :render_not_found
   end
 
   private
