@@ -1,0 +1,43 @@
+<html>
+<head>
+</head>
+<body>
+<div id ='insert'></div>
+<canvas id="myChart"></canvas>
+
+<div class="date_block">
+  <center>
+    от  <input type="date" value="" id="start">
+    до  <input type="date" id="end">
+    <input type="button" value="подтвердить" id='newdate'>
+  </center>
+</div>
+<center>
+<%=link_to 'Back' ,people_path ,class:"one"%>
+</center>
+  <h5>Имена записей </h5>
+<div><ul>
+  <%for name in @names[2] %>
+    <li><%= name %></li>
+    <% end %></ul>
+</div>
+<h5>Имена категорий расходов </h5>
+ <div><ul>
+  <%for name in @names[0] %>
+    <li><%= name %></li>
+  <% end %>
+</ul>
+</div>
+<h5>Имена категорий доходов </h5>
+<div>
+  <ul>
+  <%for name in @names[1] %>
+      <li><%= name %></li>
+  <% end %>
+  </ul>
+</div>
+<div id="chart_div" style="width: 100%; height: 500px;"></div>
+<%= javascript_pack_tag 'grafik.js' %>
+</body>
+</html>
+

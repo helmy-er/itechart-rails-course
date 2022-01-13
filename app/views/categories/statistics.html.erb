@@ -1,0 +1,7 @@
+<% person_id=params.require(:format) %>
+<h4>
+<%= form_with scope: :category,method: :get, url: graphik_path do |form| %>
+    <%= form.collection_check_boxes :category_id, current_user.people.find(person_id).categories.order(:name),:id, :name %>
+    </h4>
+    <center> <button type="submit" class="one">показать статистику </button></center>
+<% end %>

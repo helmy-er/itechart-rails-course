@@ -1,0 +1,16 @@
+<% people_id=params.require(:people_id) %>
+<%= form_with scope: :expense, url: expense_path(people_id) do |form| %>
+   <%= form.label :'тема*(не больше 40 знаков)' %>
+   <%= form.text_field :name %>
+   <%= form.label :заметка %>
+   <%= form.text_field :text %>
+  <%= form.label :'кол-во денег' %>
+  <%= form.text_field :summ %>
+   <%= form.label :дата %>
+   <%= form.date_field :time %>
+  <br>
+  <%= form.label :importance %>
+   <%= form.check_box :status %>
+   <br>
+   <%= form.submit %>
+ <% end %>
