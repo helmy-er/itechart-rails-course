@@ -25,31 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change resque file">
-      <change beforePath="$PROJECT_DIR$/.idea/itechart-rails-course.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/itechart-rails-course.iml" afterDir="false" />
+    <list default="true" id="f08eb44f-c30a-436f-9a2b-5ebfa4bd6886" name="Default Changelist" comment="change UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.rubocop.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.rubocop.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/expenses_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/category.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/category.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/expense.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/expense.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/person.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/person.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/categories/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/categories/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/categories/grafik.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/grafik.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/expenses/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/expenses/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/expenses/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/expenses/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/people/_errors.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/packs/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/packs/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/categories_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/categories_controller_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/expenses_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/expenses_controller_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/people_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/people_controller_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/factories.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/factories.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -391,7 +369,8 @@
       <workItem from="1641967628938" duration="1073000" />
       <workItem from="1641982832439" duration="1314000" />
       <workItem from="1641995645908" duration="14020000" />
-      <workItem from="1642014313238" duration="4184000" />
+      <workItem from="1642014313238" duration="4680000" />
+      <workItem from="1642064842236" duration="178000" />
     </task>
     <task id="LOCAL-00001" summary="webpacker.yml">
       <created>1639935516113</created>
@@ -561,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641983320327</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="change UI">
+      <created>1642019034779</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1642019034779</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +598,8 @@
     <MESSAGE value="add rubocop" />
     <MESSAGE value="change resque" />
     <MESSAGE value="change resque file" />
-    <option name="LAST_COMMIT_MESSAGE" value="change resque file" />
+    <MESSAGE value="change UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="change UI" />
   </component>
   <component name="WindowStateProjectService">
     <state x="416" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1642010186094">
@@ -631,42 +618,42 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1640368324547" />
-    <state width="1323" height="275" key="GridCell.Tab.0.bottom" timestamp="1642018595495">
+    <state width="1323" height="275" key="GridCell.Tab.0.bottom" timestamp="1642019356933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="275" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1642018595495" />
-    <state width="1323" height="275" key="GridCell.Tab.0.center" timestamp="1642018595495">
+    <state width="1323" height="275" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1642019356933" />
+    <state width="1323" height="275" key="GridCell.Tab.0.center" timestamp="1642019356933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="275" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1642018595495" />
-    <state width="1323" height="275" key="GridCell.Tab.0.left" timestamp="1642018595495">
+    <state width="1323" height="275" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1642019356933" />
+    <state width="1323" height="275" key="GridCell.Tab.0.left" timestamp="1642019356933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="275" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1642018595495" />
-    <state width="1323" height="275" key="GridCell.Tab.0.right" timestamp="1642018595495">
+    <state width="1323" height="275" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1642019356933" />
+    <state width="1323" height="275" key="GridCell.Tab.0.right" timestamp="1642019356933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="275" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1642018595495" />
-    <state width="1323" height="275" key="GridCell.Tab.1.bottom" timestamp="1642018595496">
+    <state width="1323" height="275" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1642019356933" />
+    <state width="1323" height="275" key="GridCell.Tab.1.bottom" timestamp="1642019356933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="275" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1642018595496" />
-    <state width="1323" height="275" key="GridCell.Tab.1.center" timestamp="1642018595496">
+    <state width="1323" height="275" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1642019356933" />
+    <state width="1323" height="275" key="GridCell.Tab.1.center" timestamp="1642019356933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="275" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1642018595496" />
-    <state width="1323" height="275" key="GridCell.Tab.1.left" timestamp="1642018595496">
+    <state width="1323" height="275" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1642019356933" />
+    <state width="1323" height="275" key="GridCell.Tab.1.left" timestamp="1642019356933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="275" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1642018595496" />
-    <state width="1323" height="275" key="GridCell.Tab.1.right" timestamp="1642018595496">
+    <state width="1323" height="275" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1642019356933" />
+    <state width="1323" height="275" key="GridCell.Tab.1.right" timestamp="1642019356933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="275" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1642018595496" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1642018855699">
+    <state width="1323" height="275" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1642019356933" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1642019194887">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1642018855699" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1642019194887" />
     <state x="289" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1641890941920">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
